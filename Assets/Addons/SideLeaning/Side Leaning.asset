@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a776487618c5eca41bfe2a54260297f7, type: 3}
+  m_Name: Side Leaning
+  m_EditorClassIdentifier: 
+  Name: Side Leaning
+  Version: 1.0.1
+  MinMFPSVersion: 1.9
+  Instructions: '<b><size=14>Integration:</size></b>
+
+
+    - Go to the editor top
+    navigation menu > MFPS > Addons > Side Leaning > <b>Player Setup.</b>
+
+    -
+    That''s
+
+
+    <b><size=14>Usage:</size></b>
+
+
+    - After the integration, simply
+    press <b>Q</b> to lean to the left and <b>E</b> to lean to the right
+
+
+    <b><size=14>Documentation:</size></b>
+
+
+    -
+    Top editor navigation menu > MFPS > Tutorials > Side Leaning.'
+  TutorialScript: AddonPlayerSideLeaningDoc
