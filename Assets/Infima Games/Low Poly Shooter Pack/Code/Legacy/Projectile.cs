@@ -36,7 +36,7 @@ namespace InfimaGames.LowPolyShooterPack.Legacy
 		{
 			//Grab the game mode service, we need it to access the player character!
 			//Ignore the main player character's collision. A little hacky, but it should work.
-			Physics.IgnoreCollision(bl_GameManager.Instance.LocalPlayerReferences.playerCharacter.GetComponent<Collider>(),
+			Physics.IgnoreCollision(bl_GameManager.Instance.LocalPlayerReferences.GetComponent<Collider>(),
 				GetComponent<Collider>());
 
 			//Start destroy timer

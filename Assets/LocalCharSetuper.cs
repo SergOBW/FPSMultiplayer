@@ -2,19 +2,17 @@ using InfimaGames.LowPolyShooterPack;
 using InfimaGames.LowPolyShooterPack.Interface;
 using UnityEngine;
 
-public class LocalCharSetuper : MonoBehaviour
+public class LocalCharSetuper : bl_PhotonHelper
 {
     [SerializeField] private CharacterBehaviour infimaCharacter;
     [SerializeField] private GameObject[] disableAtStart;
     [SerializeField] private CanvasSpawner _canvasSpawner;
     private void Awake()
     {
-        foreach (var gameObject in disableAtStart)
+        if (isMine)
         {
-            gameObject.SetActive(false);
+            bl_EventHandler.onLocalPlayerSpawn += SetupLocalPlayer;
         }
-
-        bl_EventHandler.onLocalPlayerSpawn += SetupLocalPlayer;
     }
 
     public void SetupLocalPlayer()
@@ -24,11 +22,6 @@ public class LocalCharSetuper : MonoBehaviour
         infimaCharacter.Initialize();
         
         infimaCharacter.Setup();
-        
-        foreach (var gameObject in disableAtStart)
-        {
-            gameObject.SetActive(true);
-        }
 
         _canvasSpawner.SpawnCanvas();
     }

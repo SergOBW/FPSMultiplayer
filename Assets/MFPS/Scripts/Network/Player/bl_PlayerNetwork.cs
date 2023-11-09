@@ -152,7 +152,6 @@ public class bl_PlayerNetwork : bl_MonoBehaviour, IPunObservable
             stream.SendNext(fpControler.GetPlayerState());
             stream.SendNext(fpControler.IsGrounded());
             stream.SendNext((byte)PlayerReferences.gunManager.GetCurrentWeapon().GunID);//send as byte, max value is 255.
-            //stream.SendNext((byte)8);//send as byte, max value is 255.
             stream.SendNext(FPState);
             stream.SendNext(fpControler.GetVelocity());
         }
@@ -222,8 +221,6 @@ public class bl_PlayerNetwork : bl_MonoBehaviour, IPunObservable
             UpdatePosition();
             UpdateRotation();
         }
-        
-
         HeadTarget.LookAt(networkHeadLookAt);
 
         PlayerReferences.playerAnimations.BodyState = NetworkBodyState;//send the state of player local for remote animation

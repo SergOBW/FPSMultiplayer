@@ -45,6 +45,8 @@ namespace InfimaGames.LowPolyShooterPack
         /// </summary>
         private Rigidbody playerCharacterRigidbody;
 
+        private bl_PlayerReferences _localPlayer;
+
         /// <summary>
         /// The player character's rotation.
         /// </summary>
@@ -66,10 +68,10 @@ namespace InfimaGames.LowPolyShooterPack
         private void Start()
         {
             //Get Player Character.
-            playerCharacter = bl_GameManager.Instance.LocalPlayerReferences.playerCharacter;
-            
+            _localPlayer = bl_GameManager.Instance.LocalPlayerReferences;
+            playerCharacter = _localPlayer.playerCharacter;
             //Cache the character's initial rotation.
-            rotationCharacter = playerCharacter.transform.localRotation;
+            rotationCharacter = _localPlayer.LocalRotation;
             //Cache the camera's initial rotation.
             rotationCamera = transform.localRotation;
         }
@@ -103,9 +105,9 @@ namespace InfimaGames.LowPolyShooterPack
                 localRotation = Quaternion.Slerp(localRotation, rotationCamera, Time.deltaTime * interpolationSpeed);
                 //Clamp.
                 localRotation = Clamp(localRotation);
-                if (playerCharacter != null)
+                if (_localPlayer != null)
                 {
-                    playerCharacter.transform.rotation = Quaternion.Slerp(playerCharacter.transform.rotation, rotationCharacter, Time.deltaTime * interpolationSpeed);
+                    _localPlayer.transform.rotation = Quaternion.Slerp(_localPlayer.transform.rotation, rotationCharacter, Time.deltaTime * interpolationSpeed);
                 }
                 //Interpolate character rotation.
             }
@@ -116,9 +118,9 @@ namespace InfimaGames.LowPolyShooterPack
                 //Clamp.
                 localRotation = Clamp(localRotation);
 
-                if (playerCharacter != null)
+                if (_localPlayer != null)
                 {
-                    playerCharacter.transform.rotation *= rotationYaw;
+                    _localPlayer.transform.rotation *= rotationYaw;
                 }
                 //Rotate character.
             }

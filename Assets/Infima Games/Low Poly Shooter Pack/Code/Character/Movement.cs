@@ -120,7 +120,7 @@ namespace InfimaGames.LowPolyShooterPack
         /// <summary>
         /// Controller.
         /// </summary>
-        private CharacterController controller;
+        [SerializeField]private CharacterController controller;
 
         /// <summary>
         /// Player Character.
@@ -182,7 +182,6 @@ namespace InfimaGames.LowPolyShooterPack
         {
             //Cache the controller.
             playerCharacter = bl_GameManager.Instance.LocalPlayerReferences.playerCharacter;
-            controller = GetComponent<CharacterController>();
             
             //Save the default height.
             standingHeight = controller.height;
@@ -373,20 +372,15 @@ namespace InfimaGames.LowPolyShooterPack
                 return PlayerState.Jumping;
             }
 
-            if (playerCharacter!= null)
+            if (playerCharacter.IsRunning())
             {
-                if (playerCharacter.IsRunning())
-                {
-                    return PlayerState.Running;
-                }
+                return PlayerState.Running;
             }
-            if (playerCharacter!= null)
+            if (playerCharacter.IsWalking())
             {
-                if (playerCharacter.IsWalking())
-                {
-                    return PlayerState.Walking;
-                }
+                return PlayerState.Walking;
             }
+            
             return PlayerState.Idle;
         }
 

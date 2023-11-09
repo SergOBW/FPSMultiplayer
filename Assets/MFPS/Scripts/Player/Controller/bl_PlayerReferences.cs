@@ -108,7 +108,7 @@ public class bl_PlayerReferences : bl_PlayerReferencesCommon
         set
         {
             m_defaultCameraFOV = value;
-            playerCamera.fieldOfView = m_defaultCameraFOV;
+            //playerCamera.fieldOfView = m_defaultCameraFOV;
         }
     }
 

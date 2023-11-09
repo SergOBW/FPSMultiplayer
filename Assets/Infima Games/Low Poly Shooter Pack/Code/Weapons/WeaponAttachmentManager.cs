@@ -170,7 +170,6 @@ namespace InfimaGames.LowPolyShooterPack
 
         public override void SetupAttachments(string json = "default")
         {
-            Debug.Log("Setuping  ");
             if (json == "default")
             {
                 //Randomize. This allows us to spice things up a little!

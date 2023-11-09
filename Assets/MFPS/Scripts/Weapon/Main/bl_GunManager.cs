@@ -97,8 +97,8 @@ public class bl_GunManager : bl_MonoBehaviour
     private void Start()
     {
         //Disable all weapons in children and take the first
-        foreach (bl_Gun g in PlayerEquip) { g?.Setup(true); }
-        foreach (bl_Gun guns in AllGuns) { guns.gameObject?.SetActive(false); }
+        //foreach (bl_Gun g in PlayerEquip) { g?.Setup(true); }
+        //foreach (bl_Gun guns in AllGuns) { guns.gameObject?.SetActive(false); }
         //bl_WeaponLoadoutUIBase.Instance?.SetLoadout(PlayerEquip);
         EquipPickUpMode = bl_GameData.Instance.switchToPickupWeapon;
 #if GR
@@ -109,7 +109,7 @@ public class bl_GunManager : bl_MonoBehaviour
         }
 #endif
         var firstWeapon = PlayerEquip[currentWeaponIndex];
-        TakeWeapon(firstWeapon);
+        //TakeWeapon(firstWeapon);
 
         if (firstWeapon != null)
             bl_EventHandler.ChangeWeaponEvent(firstWeapon.GunID);
@@ -174,8 +174,11 @@ public class bl_GunManager : bl_MonoBehaviour
             if (PlayerEquip[i] == null) continue;
             PlayerEquip[i].Initialized();
         }
+    }
 
-        playerReferences.GetComponentInChildren<Inventory>().Setup(PlayerEquip);
+    public List<bl_Gun> GetPlayerEquip()
+    {
+        return PlayerEquip;
     }
 
     /// <summary>
@@ -282,6 +285,12 @@ public class bl_GunManager : bl_MonoBehaviour
 
         ChangeCurrentWeaponTo(next);
         return currentWeaponIndex;
+    }
+
+    public void SwitchByIndex(int weaponIndex)
+    {
+        currentWeaponIndex = weaponIndex;
+        StartCoroutine(ChangeGun(currentWeaponIndex, PlayerEquip[weaponIndex].gameObject, currentWeaponIndex));
     }
     
     /// <summary>

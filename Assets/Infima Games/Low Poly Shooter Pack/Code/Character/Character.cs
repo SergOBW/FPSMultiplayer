@@ -1548,11 +1548,11 @@ namespace InfimaGames.LowPolyShooterPack
 		{
 			if (_blPlayerNetwork == null)
 				return;
-
-			bool isFiring = shotsFired > 0;
+			
+			bool isFiring = characterAnimator.GetCurrentAnimatorStateInfo(layerOverlay).IsName("Fire");
 			if (isFiring && !IsReloading())
 			{
-				FPState = (IsAiming()) ? PlayerFPState.FireAiming : PlayerFPState.Firing;
+				FPState = IsAiming() ? PlayerFPState.FireAiming : PlayerFPState.Firing;
 			}
 			else if (IsAiming() && !isFiring && !IsReloading())
 			{

@@ -518,7 +518,7 @@ namespace InfimaGames.LowPolyShooterPack
             BulletSettings.Speed = roundsPerMinutes;
             BulletSettings.WeaponName = weaponName;
             BulletSettings.Position = bl_PlayerReferences.LocalPlayer.Position;
-            BulletSettings.WeaponID = 8;
+            BulletSettings.WeaponID = bl_PlayerReferences.LocalPlayer.gunManager.GetCurrentGunID;
             BulletSettings.isNetwork = false;
             BulletSettings.DropFactor = shotCount;
             BulletSettings.Range = 1000;
