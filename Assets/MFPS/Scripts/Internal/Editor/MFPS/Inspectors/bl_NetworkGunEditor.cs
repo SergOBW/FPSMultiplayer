@@ -7,6 +7,7 @@ using MFPSEditor;
 public class bl_NetworkGunEditor : Editor
 {
     private bl_NetworkGun script;
+    private AudioClip fireClip;
     private bl_PlayerReferences playerReferences;
     private List<string> FPWeaponsAvailable = new List<string>();
     private bl_Gun[] LocalGuns;
@@ -54,6 +55,7 @@ public class bl_NetworkGunEditor : Editor
 
         EditorGUILayout.BeginVertical("box");
         script.LocalGun = EditorGUILayout.ObjectField("Local Weapon", script.LocalGun, typeof(bl_Gun), allowSceneObjects) as bl_Gun;
+        script.fireClip = EditorGUILayout.ObjectField("Default weapon clip", script.fireClip, typeof(AudioClip), allowSceneObjects) as AudioClip;
         EditorGUILayout.EndVertical();
 
         if (script.LocalGun != null)

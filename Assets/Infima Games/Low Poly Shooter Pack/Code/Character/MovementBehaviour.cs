@@ -119,5 +119,7 @@ namespace InfimaGames.LowPolyShooterPack
         public abstract void TryToggleCrouch();
 
         #endregion
+
+        public abstract bl_Footstep GetFootStep();
     }
 }

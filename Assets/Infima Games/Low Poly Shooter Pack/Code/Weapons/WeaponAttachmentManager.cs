@@ -1,5 +1,7 @@
 ﻿//Copyright 2022, Infima Games. All Rights Reserved.
 
+using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 
 namespace InfimaGames.LowPolyShooterPack
@@ -92,6 +94,8 @@ namespace InfimaGames.LowPolyShooterPack
         [Tooltip("All possible Magazine Attachments that this Weapon can use!")]
         [SerializeField]
         private Magazine[] magazineArray;
+        
+        public bool isFPWeapon = true;
 
         #endregion
 
@@ -117,6 +121,14 @@ namespace InfimaGames.LowPolyShooterPack
         /// Equipped Magazine.
         /// </summary>
         private MagazineBehaviour magazineBehaviour;
+        
+        private PhotonView photonView;
+        private bl_Gun Gun;
+        private bool isSync;
+        private int[] AttachmentsIds = new int[6] { 0, 0, 0, 0, 0, 0};
+        public string WeaponName;
+        
+        
 
         #endregion
 
@@ -167,10 +179,49 @@ namespace InfimaGames.LowPolyShooterPack
             magazineBehaviour = magazineArray.SelectAndSetActive(magazineIndex);
         }
         */
+        
 
-        public override void SetupAttachments(string json = "default")
+        #endregion
+
+        #region GETTERS
+
+        public override ScopeBehaviour GetEquippedScope() => scopeBehaviour;
+        public override ScopeBehaviour GetEquippedScopeDefault() => scopeDefaultBehaviour;
+
+        public override MagazineBehaviour GetEquippedMagazine() => magazineBehaviour;
+        public override MuzzleBehaviour GetEquippedMuzzle() => muzzleBehaviour;
+
+        public override LaserBehaviour GetEquippedLaser() => laserBehaviour;
+        public override GripBehaviour GetEquippedGrip() => gripBehaviour;
+
+        #endregion
+        
+        public override void SetupAttachments(string json = "0,0,0,0,0,0")
         {
-            if (json == "default")
+            if(photonView == null) { photonView = bl_PlayerReferences.LocalPlayer.photonView; }
+            if (isFPWeapon && !isSync)
+            {
+                Gun = GetComponent<bl_Gun>();
+                WeaponName = bl_CustomizerData.Instance.Weapons[4].WeaponName;
+                Debug.Log(WeaponName);
+                AttachmentsIds = bl_CustomizerData.Instance.LoadAttachmentsForWeapon(WeaponName);
+                ApplyAttachments();
+                string line = bl_CustomizerData.Instance.CompileArray(AttachmentsIds);
+                photonView.RPC("SyncCustomizer", RpcTarget.Others, Gun.GunID, line);
+                isSync = true;
+                bl_PhotonCallbacks.PlayerEnteredRoom += OnNewPlayerEnter;
+            }
+            else
+            {
+                Debug .Log(json);
+                AttachmentsIds = bl_CustomizerData.Instance.DecompileLine(json);
+                ApplyAttachments();
+            }
+        }
+
+        private void ApplyAttachments()
+        {
+            if (AttachmentsIds == new []{0,0,0,0,0,0})
             {
                 //Randomize. This allows us to spice things up a little!
                 scopeBehaviour = scopeDefaultBehaviour;
@@ -202,21 +253,38 @@ namespace InfimaGames.LowPolyShooterPack
                 //Select Magazine!
                 magazineBehaviour = magazineArray.SelectAndSetActive(magazineIndex);
             }
+
+            muzzleIndex = AttachmentsIds[0];
+            scopeIndex = AttachmentsIds[1];
+            gripIndex = AttachmentsIds[2];
+            magazineIndex = AttachmentsIds[3];
+            laserIndex = AttachmentsIds[4];
+            
+            scopeBehaviour = scopeArray[scopeIndex];
+            
+            scopeBehaviour.gameObject.SetActive(true);
+            
+            muzzleBehaviour = muzzleArray.SelectAndSetActive(muzzleIndex);
+            
+            laserBehaviour = laserArray.SelectAndSetActive(laserIndex);
+
+            gripBehaviour = gripArray.SelectAndSetActive(gripIndex);
+            
+            magazineBehaviour = magazineArray.SelectAndSetActive(magazineIndex);
         }
 
-        #endregion
-
-        #region GETTERS
-
-        public override ScopeBehaviour GetEquippedScope() => scopeBehaviour;
-        public override ScopeBehaviour GetEquippedScopeDefault() => scopeDefaultBehaviour;
-
-        public override MagazineBehaviour GetEquippedMagazine() => magazineBehaviour;
-        public override MuzzleBehaviour GetEquippedMuzzle() => muzzleBehaviour;
-
-        public override LaserBehaviour GetEquippedLaser() => laserBehaviour;
-        public override GripBehaviour GetEquippedGrip() => gripBehaviour;
-
-        #endregion
+        private void OnNewPlayerEnter(Player obj)
+        {
+            if (isFPWeapon)
+            {
+                string line = bl_CustomizerData.Instance.CompileArray(AttachmentsIds);
+                photonView.RPC("SyncCustomizer", RpcTarget.Others, Gun.GunID, line);
+            }
+        }
+        
+        private void OnDestroy()
+        {
+            bl_PhotonCallbacks.PlayerEnteredRoom -= OnNewPlayerEnter;
+        }
     }
 }

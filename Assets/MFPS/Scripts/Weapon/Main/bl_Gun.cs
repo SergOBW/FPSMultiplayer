@@ -234,6 +234,7 @@ public class bl_Gun : bl_GunBase
         //bl_CrosshairBase.Instance.Block = false;
         Setup();
         customWeapon?.Initialitate(this);
+        FireSound = GetComponent<Weapon>().GetAudioClipFire();
         isInitialized = true;
     }
 

@@ -54,7 +54,7 @@ public class bl_PlayerAnimations : bl_PlayerAnimationsBase
         if (PlayerReferences != null) PlayerRoot = PlayerReferences.transform;
         if (useFootSteps)
         {
-            //footstep = PlayerReferences.movementBehaviour.GetFootStep();
+            footstep = PlayerReferences.movementBehaviour.GetFootStep();
         }
         if (animatorHashes == null)
         {

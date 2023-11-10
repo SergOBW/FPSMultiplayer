@@ -42,6 +42,8 @@ namespace InfimaGames.LowPolyShooterPack
         [Tooltip("The audio clip that is played while running.")]
         [SerializeField]
         private AudioClip audioClipRunning;
+
+        [SerializeField] private AudioClip slideSound;
         
         #endregion
         
@@ -73,6 +75,16 @@ namespace InfimaGames.LowPolyShooterPack
                 Log.ReferenceError(this, gameObject);
                 
                 //Return.
+                return;
+            }
+
+            if (movementBehaviour.IsSliding())
+            {
+                audioSource.clip = slideSound;
+                audioSource.volume = 0.7f;
+                //Play it!
+                if (!audioSource.isPlaying)
+                    audioSource.Play();
                 return;
             }
             

@@ -103,6 +103,10 @@ namespace InfimaGames.LowPolyShooterPack
         [SerializeField, ShowIf(nameof(canCrouch), true)]
         private float crouchHeight = 1.0f;
         
+        [Tooltip("Height of the character while crouching.")]
+        [SerializeField, ShowIf(nameof(canCrouch), true)]
+        private float slideHeight = 1.0f;
+        
         [Tooltip("Mask of possible layers that can cause overlaps when trying to un-crouch. Very important!")]
         [SerializeField, ShowIf(nameof(canCrouch), true)]
         private LayerMask crouchOverlapsMask;
@@ -113,8 +117,8 @@ namespace InfimaGames.LowPolyShooterPack
                  "velocity, so it is never applied by itself, that's important to note.")]
         [SerializeField]
         private float rigidbodyPushForce = 1.0f;
-        
-        
+
+        [SerializeField] private bl_Footstep footSteps;
 
         #endregion
 
@@ -306,8 +310,6 @@ namespace InfimaGames.LowPolyShooterPack
                 }
             } 
             
-            Debug.Log(desiredDirection);
-
             //World space velocity calculation.
             desiredDirection = transform.TransformDirection(desiredDirection);
             //Multiply by the weapon movement speed multiplier. This helps us modify speeds based on the weapon!
@@ -389,7 +391,6 @@ namespace InfimaGames.LowPolyShooterPack
         
         public override void TrySlide()
         {
-            Debug.Log("Try slide");
             if ((Time.time - lastSlideTime) < slideTime * slideCoolDown) return;//wait the equivalent of one extra slide before be able to slide again
             if (IsJumping()) return;
 
@@ -401,17 +402,10 @@ namespace InfimaGames.LowPolyShooterPack
             //playerReferences.gunManager.HeadAnimator.Play("slide-start", 0, 0); // if you want to use an animation instead
             mouseLook.SetTiltAngle(slideCameraTiltAngle);
             //Update the capsule's height.
-            controller.height = isSliding ? crouchHeight : standingHeight;
+            controller.height = isSliding ? slideHeight : standingHeight;
             //Update the capsule's center.
             controller.center = controller.height / 2.0f * Vector3.up;
-            /*
-            if (slideSound != null)
-            {
-                m_AudioSource.clip = slideSound;
-                m_AudioSource.volume = 0.7f;
-                m_AudioSource.Play();
-            }
-            */
+            
             mouseLook.UseOnlyCameraRotation();
             this.InvokeAfter(slideTime, () =>
             {
@@ -427,7 +421,7 @@ namespace InfimaGames.LowPolyShooterPack
                 lastSlideTime = Time.time;
                 mouseLook.SetTiltAngle(0);
                 mouseLook.PortBodyOrientationToCamera();
-                controller.height = isSliding ? crouchHeight : standingHeight;
+                controller.height = isSliding ? slideHeight : standingHeight;
                 //Update the capsule's center.
                 controller.center = controller.height / 2.0f * Vector3.up;
             });
@@ -530,6 +524,12 @@ namespace InfimaGames.LowPolyShooterPack
         /// Try Toggle Crouch.
         /// </summary>
         public override void TryToggleCrouch() => TryCrouch(!crouching);
+
+        public override bl_Footstep GetFootStep()
+        {
+            return footSteps;
+        }
+
         /// <summary>
         /// Tries to un-crouch the character.
         /// </summary>

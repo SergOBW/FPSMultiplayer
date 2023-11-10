@@ -1,4 +1,5 @@
-﻿using MFPS.Audio;
+﻿using InfimaGames.LowPolyShooterPack;
+using MFPS.Audio;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
@@ -15,7 +16,7 @@ public class bl_NetworkGun : MonoBehaviour
     public GameObject Bullet;
     public ParticleSystem MuzzleFlash;
     public GameObject DesactiveOnOffAmmo;
-    public Transform LeftHandPosition; 
+    public Transform LeftHandPosition;
     #endregion
 
     #region Private members
@@ -26,6 +27,7 @@ public class bl_NetworkGun : MonoBehaviour
     Vector3 bulletPosition = Vector3.zero;
     Quaternion bulletRotation = Quaternion.identity;
     Transform Root; 
+    public AudioClip fireClip;
     #endregion
 
     /// <summary>
@@ -52,6 +54,12 @@ public class bl_NetworkGun : MonoBehaviour
     {
         PlayerSync?.SetNetworkWeapon(Info.Type, this);
         LocalGun?.customWeapon?.Initialitate(LocalGun);
+        WeaponAttachmentManagerBehaviour weaponAttachment = GetComponent<WeaponAttachmentManagerBehaviour>();
+        weaponAttachment.SetupAttachments();
+        if (weaponAttachment.GetEquippedMuzzle().GetAudioClipFire() != null)
+        {
+            fireClip = weaponAttachment.GetEquippedMuzzle().GetAudioClipFire();
+        }
     }
 
     /// <summary>
@@ -176,9 +184,25 @@ public class bl_NetworkGun : MonoBehaviour
     /// </summary>
     public void PlayLocalFireAudio()
     {
-        Source.clip = LocalGun.FireSound;
-        Source.spread = Random.Range(1.0f, 1.5f);
-        Source.Play();
+        if (LocalGun != null)
+        {
+            if (LocalGun.FireSound != null)
+            {
+                Source.clip = LocalGun.FireSound;
+                Source.spread = Random.Range(1.0f, 1.5f);
+                Source.Play();
+            }
+            else
+            {
+                Source.clip = fireClip;
+                Source.spread = Random.Range(1.0f, 1.5f);
+                Source.Play();
+            }
+        }
+        else
+        {
+            Debug.LogError("There is no local gun wtf");
+        }
     }
 
     /// <summary>

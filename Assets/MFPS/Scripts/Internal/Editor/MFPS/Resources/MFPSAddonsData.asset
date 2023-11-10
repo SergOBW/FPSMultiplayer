@@ -40,8 +40,8 @@ MonoBehaviour:
   - NiceName: Customizer
     KeyName: CUSTOMIZER
     LastVersion: 2.0.3
-    Info: {fileID: 0}
-    CurrentVersion: --
+    Info: {fileID: 11400000, guid: c909a4df55136e54eb79cba262d79cf2, type: 2}
+    CurrentVersion: 1.8.2
     MinVersion: 1.5.3
     FolderName: Customizer
     ChangeLog: []
@@ -327,7 +327,7 @@ MonoBehaviour:
     ChangeLog: []
   - NiceName: Game News
     KeyName: GAMENEWS
-    LastVersion: 
+    LastVersion: 1.0.2
     Info: {fileID: 0}
     CurrentVersion: --
     MinVersion: 1.0
@@ -335,7 +335,7 @@ MonoBehaviour:
     ChangeLog: []
   - NiceName: Daily Reward
     KeyName: DREWARD
-    LastVersion: 
+    LastVersion: 1.1.0
     Info: {fileID: 0}
     CurrentVersion: --
     MinVersion: 1.9
@@ -343,7 +343,7 @@ MonoBehaviour:
     ChangeLog: []
   - NiceName: FP Legs
     KeyName: FPLEGS
-    LastVersion: 
+    LastVersion: 1.0.0
     Info: {fileID: 0}
     CurrentVersion: --
     MinVersion: 1.9.3
@@ -351,7 +351,7 @@ MonoBehaviour:
     ChangeLog: []
   - NiceName: Spawn Selection
     KeyName: SPSEN
-    LastVersion: 
+    LastVersion: 1.0.0
     Info: {fileID: 0}
     CurrentVersion: --
     MinVersion: 1.9.3
@@ -359,7 +359,7 @@ MonoBehaviour:
     ChangeLog: []
   - NiceName: Aim Assist
     KeyName: AAS
-    LastVersion: 
+    LastVersion: 1.0.1
     Info: {fileID: 0}
     CurrentVersion: --
     MinVersion: 1.9.3
@@ -367,7 +367,7 @@ MonoBehaviour:
     ChangeLog: []
   - NiceName: Matchmaking Pro
     KeyName: MMP
-    LastVersion: 
+    LastVersion: 1.0.2
     Info: {fileID: 0}
     CurrentVersion: --
     MinVersion: 1.9.3
@@ -375,15 +375,15 @@ MonoBehaviour:
     ChangeLog: []
   - NiceName: Side Leaning
     KeyName: PSLG
-    LastVersion: 
+    LastVersion: 1.0.1
     Info: {fileID: 11400000, guid: 0a18ce9cc3a8a604581939423830b5d4, type: 2}
-    CurrentVersion: --
+    CurrentVersion: 1.0.1
     MinVersion: 1.9.0
     FolderName: SideLeaning
     ChangeLog: []
   - NiceName: Battle Pass
     KeyName: BATTLEPASS
-    LastVersion: 
+    LastVersion: 1.0.0
     Info: {fileID: 0}
     CurrentVersion: --
     MinVersion: 1.9
@@ -391,7 +391,7 @@ MonoBehaviour:
     ChangeLog: []
   - NiceName: Crosshair Pro
     KeyName: CROSSPRO
-    LastVersion: 
+    LastVersion: 1.0.0
     Info: {fileID: 0}
     CurrentVersion: --
     MinVersion: 1.10.0
@@ -399,7 +399,7 @@ MonoBehaviour:
     ChangeLog: []
   - NiceName: Connection Screens
     KeyName: Connection Screens
-    LastVersion: 
+    LastVersion: 1.0.0
     Info: {fileID: 0}
     CurrentVersion: --
     MinVersion: 1.9.3
@@ -407,7 +407,7 @@ MonoBehaviour:
     ChangeLog: []
   - NiceName: Name Plate Pro
     KeyName: Name Plate Pro
-    LastVersion: 
+    LastVersion: 1.0.0
     Info: {fileID: 0}
     CurrentVersion: --
     MinVersion: 1.9.3

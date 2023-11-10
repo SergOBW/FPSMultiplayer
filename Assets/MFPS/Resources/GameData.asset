@@ -27,7 +27,7 @@ MonoBehaviour:
   DetectAFK: 0
   MasterCanKickPlayers: 1
   ArriveKitsCauseDamage: 1
-  CalculateNetworkFootSteps: 0
+  CalculateNetworkFootSteps: 1
   ShowNetworkStats: 0
   RememberPlayerName: 1
   ShowWeaponLoadout: 1

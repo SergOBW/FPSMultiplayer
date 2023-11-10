@@ -309,7 +309,6 @@ public class bl_PlayerNetwork : bl_MonoBehaviour, IPunObservable
             if (currentGun == null) continue;
 
             int currentID = (local) ? PlayerReferences.gunManager.GetCurrentWeapon().GunID : networkGunID;
-            //int currentID = (local) ? 8 : networkGunID;
             if (currentGun.GetWeaponID == currentID)
             {
                 currentGun.gameObject.SetActive(true);
@@ -476,9 +475,9 @@ public class bl_PlayerNetwork : bl_MonoBehaviour, IPunObservable
         bl_NetworkGun ng = NetworkGuns.Find(x => x.LocalGun.GunID == weaponID);
         if (ng != null)
         {
-            if (ng.GetComponent<bl_CustomizerWeapon>() != null)
+            if (ng.GetComponent<WeaponAttachmentManagerBehaviour>() != null)
             {
-                ng.GetComponent<bl_CustomizerWeapon>().ApplyAttachments(line);
+                ng.GetComponent<WeaponAttachmentManagerBehaviour>().SetupAttachments(line);
             }
             else
             {

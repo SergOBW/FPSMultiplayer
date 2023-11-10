@@ -1,0 +1,131 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.Linq;
+using MFPS.Addon.Customizer;
+
+public class bl_CustomizerData : ScriptableObject
+{
+    public List<CustomizerInfo> Weapons = new List<CustomizerInfo>();
+    [Space(10)]
+    public List<GlobalCamo> GlobalCamos = new List<GlobalCamo>();
+
+    [HideInInspector] public int OpenedWeapon = 0;
+    public const string CURRENT_CUSTOMIZER = "cmz.cweaponid";
+
+    public CustomizerInfo GetWeapon(string weaponName)
+    {
+        for (int i = 0; i < Weapons.Count; i++)
+        {
+            if (Weapons[i].WeaponName == weaponName)
+            {
+                return Weapons[i];
+            }
+        }
+        return null;
+    }
+
+    public int GetCustomizerID(int GunID)
+    {
+        for (int i = 0; i < Weapons.Count; i++)
+        {
+            if (Weapons[i].GunID == GunID) return i;
+        }
+        return 0;
+    }
+
+    public string[] GetWeaponStringArray()
+    {
+        string[] array = new string[Weapons.Count];
+        for (int i = 0; i < Weapons.Count; i++)
+        {
+            array[i] = Weapons[i].WeaponName;
+        }
+        return array;
+    }
+
+    public int[] LoadAttachmentsForWeapon(string weapon)
+    {
+        int[] array = new int[6] { 0, 0, 0, 0, 0, 0 };
+        var key = GetWeaponKey(weapon);
+        if (PlayerPrefs.HasKey(key))
+        {
+            string t = PlayerPrefs.GetString(key);
+            Debug.Log(t);
+            array = DecompileLine(t);
+        }
+        return array;
+    }
+
+    public int[] DecompileLine(string line)
+    {
+        int[] array = new int[6] { 0, 0, 0, 0, 0, 0 };
+        string[] split = line.Split(","[0]);
+        foreach (var lineee in split)
+        {
+            Debug.Log(lineee);
+        }
+        array[0] = int.Parse(split[0]);
+        array[1] = int.Parse(split[1]);
+        array[2] = int.Parse(split[2]);
+        array[3] = int.Parse(split[3]);
+        array[4] = int.Parse(split[4]);
+        array[5] = int.Parse(split[5]);
+        return array;
+    }
+
+    public string CompileArray(int[] array)
+    {
+        string line = string.Join(",", array.Select(x => x.ToString()).ToArray());
+        Debug.Log(line);
+        return line;
+    }
+
+    public void SaveAttachmentsForWeapon(string weapon, int[] ids)
+    {
+        string t = GetWeaponKey(weapon);
+        string line = string.Join(",", ids.Select(x => x.ToString()).ToArray());
+        PlayerPrefs.SetString(t, line);
+        PlayerPrefs.SetInt(CURRENT_CUSTOMIZER, Weapons.FindIndex(x => x.WeaponName == weapon));
+    }
+
+    public string GetWeaponKey(string wname)
+    {
+        string t = string.Format("{0}.{1}.cmz.att.{2}", Application.companyName, Application.productName, wname);
+        return t;
+    }
+
+    public string[] GetGlobalCamosStringArray()
+    {
+        List<string> list = new List<string>();
+        list = GlobalCamos.Select(x => x.Name).ToList();
+        return list.ToArray();
+    }
+    /// <summary>
+    /// 
+    /// </summary>
+    void OnValidate()
+    {
+        for (int i = 0; i < Weapons.Count; i++)
+        {
+            for (int e = 0; e < Weapons[i].Camos.Count; e++)
+            {
+                Weapons[i].Camos[e].ID = e;
+                Weapons[i].Camos[e].ofWeaponID = i;
+            }
+        }
+    }
+
+    private static bl_CustomizerData _data;
+    public static bl_CustomizerData Instance
+    {
+        get
+        {
+            if(_data == null)
+            {
+                _data = Resources.Load<bl_CustomizerData>("CustomizerData");
+            }
+            return _data;
+        }
+    }
+}
