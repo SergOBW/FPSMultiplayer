@@ -1,6 +1,7 @@
 ﻿//Copyright 2022, Infima Games. All Rights Reserved.
 
 using System.Collections;
+using MFPS.PlayerController;
 using UnityEngine;
 
 namespace InfimaGames.LowPolyShooterPack
@@ -112,6 +113,8 @@ namespace InfimaGames.LowPolyShooterPack
                  "velocity, so it is never applied by itself, that's important to note.")]
         [SerializeField]
         private float rigidbodyPushForce = 1.0f;
+        
+        
 
         #endregion
 
@@ -165,7 +168,22 @@ namespace InfimaGames.LowPolyShooterPack
         private float lastJumpTime;
 
         private bool canMove;
+
+        private float lastSlideTime;
+
+        [Range(0.2f, 1.5f)] public float slideTime = 0.75f;
+        [Range(0.1f, 2.5f)] public float slideCoolDown = 1.2f;
+        [Range(1, 12)] public float slideFriction = 10;
+        public float slideCameraTiltAngle = -22;
         
+        private readonly Vector3 feetPositionOffset = new Vector3(0, 0.8f, 0);
+
+        private bool isSliding;
+        
+        private float slideForce = 0;
+        public float slideSpeed = 10;
+        public MouseLook mouseLook;
+        [SerializeField] private Transform headRoot;
         #endregion
 
         #region UNITY FUNCTIONS
@@ -185,6 +203,8 @@ namespace InfimaGames.LowPolyShooterPack
             
             //Save the default height.
             standingHeight = controller.height;
+            
+            mouseLook.Init(transform, headRoot);
             bl_EventHandler.onMatchStart += OnMatchStart;
             canMove = bl_MatchTimeManagerBase.HaveTimeStarted();
         }
@@ -259,7 +279,9 @@ namespace InfimaGames.LowPolyShooterPack
             var desiredDirection = new Vector3(frameInput.x, 0.0f, frameInput.y);
             
             //Running speed calculation.
-            if(playerCharacter.IsRunning())
+            if (isSliding)
+                desiredDirection *= slideForce;
+            else if(playerCharacter.IsRunning())
                 desiredDirection *= speedRunning;
             else
             {
@@ -283,6 +305,8 @@ namespace InfimaGames.LowPolyShooterPack
                     }
                 }
             } 
+            
+            Debug.Log(desiredDirection);
 
             //World space velocity calculation.
             desiredDirection = transform.TransformDirection(desiredDirection);
@@ -320,6 +344,15 @@ namespace InfimaGames.LowPolyShooterPack
             {
                 controller.Move(applied);
             }
+
+            if (slideForce > 0)
+            {
+                slideForce -= Time.deltaTime;
+            }
+            else
+            {
+                slideForce = 0;
+            }
         }
 
         /// <summary>
@@ -353,6 +386,58 @@ namespace InfimaGames.LowPolyShooterPack
             //Check for any overlaps.
             return (Physics.OverlapSphere(sphereLocation, controller.radius, crouchOverlapsMask).Length == 0);
         }
+        
+        public override void TrySlide()
+        {
+            Debug.Log("Try slide");
+            if ((Time.time - lastSlideTime) < slideTime * slideCoolDown) return;//wait the equivalent of one extra slide before be able to slide again
+            if (IsJumping()) return;
+
+            Vector3 startPosition = (transform.position - feetPositionOffset) + (transform.forward * controller.radius);
+            if (Physics.Linecast(startPosition, startPosition + transform.forward)) return;//there is something in front of the feet's
+
+            isSliding = true;
+            slideForce = slideSpeed;//slide force will be continually decreasing
+            //playerReferences.gunManager.HeadAnimator.Play("slide-start", 0, 0); // if you want to use an animation instead
+            mouseLook.SetTiltAngle(slideCameraTiltAngle);
+            //Update the capsule's height.
+            controller.height = isSliding ? crouchHeight : standingHeight;
+            //Update the capsule's center.
+            controller.center = controller.height / 2.0f * Vector3.up;
+            /*
+            if (slideSound != null)
+            {
+                m_AudioSource.clip = slideSound;
+                m_AudioSource.volume = 0.7f;
+                m_AudioSource.Play();
+            }
+            */
+            mouseLook.UseOnlyCameraRotation();
+            this.InvokeAfter(slideTime, () =>
+            {
+                /*
+                if (Crounching && !bl_UtilityHelper.isMobile)
+                    State = PlayerState.Crouching;
+                else if (State != PlayerState.Jumping)
+                    State = PlayerState.Idle;
+                    */
+                //Crounching = false;
+                //DoCrouchTransition();
+                isSliding = false;
+                lastSlideTime = Time.time;
+                mouseLook.SetTiltAngle(0);
+                mouseLook.PortBodyOrientationToCamera();
+                controller.height = isSliding ? crouchHeight : standingHeight;
+                //Update the capsule's center.
+                controller.center = controller.height / 2.0f * Vector3.up;
+            });
+            
+        }
+
+        public override bool IsSliding()
+        {
+            return isSliding;
+        }
 
         /// <summary>
         /// IsCrouching.
@@ -362,6 +447,11 @@ namespace InfimaGames.LowPolyShooterPack
 
         public override PlayerState GetPlayerState()
         {
+            
+            if (isSliding)
+            {
+                return PlayerState.Sliding;
+            }
             if (IsCrouching())
             {
                 return PlayerState.Crouching;
@@ -372,13 +462,20 @@ namespace InfimaGames.LowPolyShooterPack
                 return PlayerState.Jumping;
             }
 
-            if (playerCharacter.IsRunning())
+            if (playerCharacter != null)
             {
-                return PlayerState.Running;
+                if (playerCharacter.IsRunning())
+                {
+                    return PlayerState.Running;
+                }
             }
-            if (playerCharacter.IsWalking())
+            
+            if (playerCharacter != null)
             {
-                return PlayerState.Walking;
+                if (playerCharacter.IsWalking())
+                {
+                    return PlayerState.Walking;
+                }
             }
             
             return PlayerState.Idle;

@@ -397,7 +397,7 @@ namespace InfimaGames.LowPolyShooterPack
 			aimingAlpha = characterAnimator.GetFloat(AHashes.AimingAlpha);
 			
 			//Interpolate the crouching alpha. We do this here as a quick and dirty shortcut, but there's definitely better ways to do this.
-			crouchingAlpha = Mathf.Lerp(crouchingAlpha, movementBehaviour.IsCrouching() ? 1.0f : 0.0f, Time.deltaTime * 12.0f);
+			crouchingAlpha = Mathf.Lerp(crouchingAlpha, movementBehaviour.IsCrouching() || movementBehaviour.IsSliding() ? 1.0f : 0.0f, Time.deltaTime * 12.0f);
 			//Interpolate the running alpha. We do this here as a quick and dirty shortcut, but there's definitely better ways to do this.
 			runningAlpha = Mathf.Lerp(runningAlpha, running ? 1.0f : 0.0f, Time.deltaTime * runningInterpolationSpeed);
 
@@ -478,7 +478,7 @@ namespace InfimaGames.LowPolyShooterPack
 		/// <summary>
 		/// Is Crouching.
 		/// </summary>
-		public override bool IsCrouching() => movementBehaviour.IsCrouching();
+		public override bool IsCrouching() => movementBehaviour.IsCrouching() || movementBehaviour.IsSliding();
 
 		/// <summary>
 		/// IsReloading.
@@ -606,7 +606,7 @@ namespace InfimaGames.LowPolyShooterPack
 			//Update Animator Running.
 			characterAnimator.SetBool(AHashes.Running, running);
 			//Update Animator Crouching.
-			characterAnimator.SetBool(AHashes.Crouching, movementBehaviour.IsCrouching());
+			characterAnimator.SetBool(AHashes.Crouching, movementBehaviour.IsCrouching() || movementBehaviour.IsSliding());
 		}
 		/// <summary>
 		/// Plays the inspect animation.
@@ -1020,7 +1020,7 @@ namespace InfimaGames.LowPolyShooterPack
 				return false;
 
 			//No running while crouching.
-			if (movementBehaviour.IsCrouching())
+			if (movementBehaviour.IsCrouching() || movementBehaviour.IsSliding())
 				return false;
 
 			//Block.

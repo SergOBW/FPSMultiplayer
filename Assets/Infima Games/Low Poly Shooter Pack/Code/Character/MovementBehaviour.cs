@@ -88,6 +88,8 @@ namespace InfimaGames.LowPolyShooterPack
         /// </summary>
         public abstract bool IsCrouching();
 
+        public abstract bool IsSliding();
+
         public abstract PlayerState GetPlayerState();
 
         #endregion
@@ -98,6 +100,8 @@ namespace InfimaGames.LowPolyShooterPack
         /// Calling this will make the character jump!
         /// </summary>
         public abstract void Jump();
+        
+        public abstract void TrySlide();
         /// <summary>
         /// Forces crouch/un-crouch!
         /// </summary>
