@@ -1830,6 +1830,7 @@ public class bl_Gun : bl_GunBase
             return _anim;
         }
     }
+
     #endregion
 
     [System.Serializable]

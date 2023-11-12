@@ -145,6 +145,6 @@ public class GameModeSettings
     public RoundStyle GetAllowedRoundMode()
     {
         if (RoundModeAllowed == RoundModeAllowedOptions.RoundModeOnly) return RoundStyle.Rounds;
-        return RoundStyle.OneMacht;
+        return RoundStyle.OneMatch;
     }
 }

@@ -21623,6 +21623,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1222096764808990, guid: 01fe187ca5ce7c246a737201ff3e6f42, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1594083299827518, guid: 01fe187ca5ce7c246a737201ff3e6f42, type: 3}
       propertyPath: m_Name
       value: GameModes
@@ -23456,11 +23460,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 15336009, guid: 200ae869d77e6bb4a9810ac16b29549f, type: 3}
       propertyPath: maxWeaponDistance
-      value: 25
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 15336009, guid: 200ae869d77e6bb4a9810ac16b29549f, type: 3}
       propertyPath: maxFootstepDistance
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 15336009, guid: 200ae869d77e6bb4a9810ac16b29549f, type: 3}
       propertyPath: maxExplosionDistance

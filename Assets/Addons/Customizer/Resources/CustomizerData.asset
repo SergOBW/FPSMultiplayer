@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: CustomizerData
   m_EditorClassIdentifier: 
   Weapons:
-  - WeaponName: smg
-    GunID: 0
+  - WeaponName: AR_01
+    GunID: 8
     Camos:
     - Name: Default
       GlobalID: 0
@@ -51,52 +51,101 @@ MonoBehaviour:
       - Name: No Suppressor
         ID: 0
         Description: 
-      - Name: Suppressor
+      - Name: Silencer
         ID: 1
         Description: 
-      - Name: Barrel
+      - Name: Silencer 2
         ID: 2
         Description: 
+      - Name: Silencer 3
+        ID: 3
+        Description: 
       Sights:
-      - Name: Iron Sight
+      - Name: None
         ID: 0
         Description: 
       - Name: Holo Sight
         ID: 1
         Description: 
-      - Name: Cobra
+      - Name: Red Dot
         ID: 2
+        Description: 
+      - Name: Cobra
+        ID: 3
+        Description: 
+      - Name: Holo Sight
+        ID: 4
+        Description: 
+      - Name: Scope 4x
+        ID: 5
+        Description: 
+      - Name: Scope 5x
+        ID: 6
+        Description: 
+      - Name: Scope 6x
+        ID: 7
+        Description: 
+      - Name: Scope 8x
+        ID: 8
         Description: 
       Foregrips:
       - Name: None
         ID: 0
         Description: 
-      - Name: Vertical Grip
+      - Name: Grip
         ID: 1
         Description: 
-      - Name: Horizontal Grip
+      - Name: Bipod
         ID: 2
+        Description: 
+      - Name: Bipod 2
+        ID: 3
         Description: 
       Magazines:
       - Name: Normal
         ID: 0
         Description: 
-      - Name: Extended Mag
+      Lasers:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Laser
         ID: 1
         Description: 
-  - WeaponName: shotgun
-    GunID: 2
+      - Name: Flash
+        ID: 2
+        Description: 
+  - WeaponName: AR_02
+    GunID: 9
     Camos:
     - Name: Default
       GlobalID: 0
       ID: 0
-      Camo: {fileID: 2100000, guid: e463b86907a3bd54485db0a6b2eabbad, type: 2}
+      Camo: {fileID: 2100000, guid: cd63763af54801c4a953fe47b452497e, type: 2}
       OverridePreview: {fileID: 0}
       ofWeaponID: 1
-    - Name: Dragon
-      GlobalID: 5
+    - Name: Urban
+      GlobalID: 1
       ID: 1
-      Camo: {fileID: 2100000, guid: f54e44921cc3eaf4c8c4a78f0734050d, type: 2}
+      Camo: {fileID: 2100000, guid: d02bc8852dca1f04cb4bc15ff06b9418, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 1
+    - Name: Artic
+      GlobalID: 2
+      ID: 2
+      Camo: {fileID: 2100000, guid: b91b2397a27f13044a5634a548fce076, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 1
+    - Name: Toxi
+      GlobalID: 3
+      ID: 3
+      Camo: {fileID: 2100000, guid: 39fd7e908f4cca3418157b39161347fb, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 1
+    - Name: Patriot
+      GlobalID: 4
+      ID: 4
+      Camo: {fileID: 2100000, guid: 50246aca79a845b40a8622da984ad45a, type: 2}
       OverridePreview: {fileID: 0}
       ofWeaponID: 1
     Attachments:
@@ -104,37 +153,101 @@ MonoBehaviour:
       - Name: No Suppressor
         ID: 0
         Description: 
-      - Name: Suppressor
+      - Name: Silencer
         ID: 1
         Description: 
-      - Name: Small Barrel
+      - Name: Silencer 2
         ID: 2
         Description: 
+      - Name: Silencer 3
+        ID: 3
+        Description: 
       Sights:
-      - Name: Iron Sight
+      - Name: None
         ID: 0
         Description: 
       - Name: Holo Sight
         ID: 1
         Description: 
-      - Name: Cobra
+      - Name: Red Dot
         ID: 2
         Description: 
-      Foregrips: []
-      Magazines: []
-  - WeaponName: sniper
-    GunID: 4
+      - Name: Cobra
+        ID: 3
+        Description: 
+      - Name: Holo Sight
+        ID: 4
+        Description: 
+      - Name: Scope 4x
+        ID: 5
+        Description: 
+      - Name: Scope 5x
+        ID: 6
+        Description: 
+      - Name: Scope 6x
+        ID: 7
+        Description: 
+      - Name: Scope 8x
+        ID: 8
+        Description: 
+      Foregrips:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Grip
+        ID: 1
+        Description: 
+      - Name: Bipod
+        ID: 2
+        Description: 
+      - Name: Bipod 2
+        ID: 3
+        Description: 
+      Magazines:
+      - Name: Normal
+        ID: 0
+        Description: 
+      Lasers:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Laser
+        ID: 1
+        Description: 
+      - Name: Flash
+        ID: 2
+        Description: 
+  - WeaponName: AR_03
+    GunID: 10
     Camos:
     - Name: Default
       GlobalID: 0
       ID: 0
-      Camo: {fileID: 2100000, guid: 433fe5da84f14b944bffb40373729b59, type: 2}
+      Camo: {fileID: 2100000, guid: cd63763af54801c4a953fe47b452497e, type: 2}
       OverridePreview: {fileID: 0}
       ofWeaponID: 2
     - Name: Urban
       GlobalID: 1
       ID: 1
-      Camo: {fileID: 2100000, guid: f1ffebcb1cf483948b3f85244323add0, type: 2}
+      Camo: {fileID: 2100000, guid: d02bc8852dca1f04cb4bc15ff06b9418, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 2
+    - Name: Artic
+      GlobalID: 2
+      ID: 2
+      Camo: {fileID: 2100000, guid: b91b2397a27f13044a5634a548fce076, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 2
+    - Name: Toxi
+      GlobalID: 3
+      ID: 3
+      Camo: {fileID: 2100000, guid: 39fd7e908f4cca3418157b39161347fb, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 2
+    - Name: Patriot
+      GlobalID: 4
+      ID: 4
+      Camo: {fileID: 2100000, guid: 50246aca79a845b40a8622da984ad45a, type: 2}
       OverridePreview: {fileID: 0}
       ofWeaponID: 2
     Attachments:
@@ -145,40 +258,98 @@ MonoBehaviour:
       - Name: Silencer
         ID: 1
         Description: 
-      - Name: Small Barrel
+      - Name: Silencer 2
         ID: 2
         Description: 
+      - Name: Silencer 3
+        ID: 3
+        Description: 
       Sights:
-      - Name: Scope x16
+      - Name: None
         ID: 0
         Description: 
       - Name: Holo Sight
         ID: 1
         Description: 
-      - Name: Cobra
+      - Name: Red Dot
         ID: 2
         Description: 
-      Foregrips: []
+      - Name: Cobra
+        ID: 3
+        Description: 
+      - Name: Holo Sight
+        ID: 4
+        Description: 
+      - Name: Scope 4x
+        ID: 5
+        Description: 
+      - Name: Scope 5x
+        ID: 6
+        Description: 
+      - Name: Scope 6x
+        ID: 7
+        Description: 
+      - Name: Scope 8x
+        ID: 8
+        Description: 
+      Foregrips:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Grip
+        ID: 1
+        Description: 
+      - Name: Bipod
+        ID: 2
+        Description: 
+      - Name: Bipod 2
+        ID: 3
+        Description: 
       Magazines:
       - Name: Normal
         ID: 0
         Description: 
-      - Name: Extended
+      Lasers:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Laser
         ID: 1
         Description: 
-  - WeaponName: pistol
-    GunID: 1
+      - Name: Flash
+        ID: 2
+        Description: 
+  - WeaponName: Handgun_01
+    GunID: 12
     Camos:
     - Name: Default
       GlobalID: 0
       ID: 0
-      Camo: {fileID: 2100000, guid: d06140c5eb850234cbd0989044e564e4, type: 2}
+      Camo: {fileID: 2100000, guid: cd63763af54801c4a953fe47b452497e, type: 2}
       OverridePreview: {fileID: 0}
       ofWeaponID: 3
     - Name: Urban
       GlobalID: 1
       ID: 1
-      Camo: {fileID: 2100000, guid: 0f5323b734db4354ea18bd943bc8c8aa, type: 2}
+      Camo: {fileID: 2100000, guid: d02bc8852dca1f04cb4bc15ff06b9418, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 3
+    - Name: Artic
+      GlobalID: 2
+      ID: 2
+      Camo: {fileID: 2100000, guid: b91b2397a27f13044a5634a548fce076, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 3
+    - Name: Toxi
+      GlobalID: 3
+      ID: 3
+      Camo: {fileID: 2100000, guid: 39fd7e908f4cca3418157b39161347fb, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 3
+    - Name: Patriot
+      GlobalID: 4
+      ID: 4
+      Camo: {fileID: 2100000, guid: 50246aca79a845b40a8622da984ad45a, type: 2}
       OverridePreview: {fileID: 0}
       ofWeaponID: 3
     Attachments:
@@ -189,40 +360,98 @@ MonoBehaviour:
       - Name: Silencer
         ID: 1
         Description: 
-      - Name: Small Barrel
+      - Name: Silencer 2
         ID: 2
         Description: 
+      - Name: Silencer 3
+        ID: 3
+        Description: 
       Sights:
-      - Name: Iron Sight
+      - Name: None
         ID: 0
         Description: 
       - Name: Holo Sight
         ID: 1
         Description: 
-      - Name: Cobra
+      - Name: Red Dot
         ID: 2
         Description: 
-      Foregrips: []
+      - Name: Cobra
+        ID: 3
+        Description: 
+      - Name: Holo Sight
+        ID: 4
+        Description: 
+      - Name: Scope 4x
+        ID: 5
+        Description: 
+      - Name: Scope 5x
+        ID: 6
+        Description: 
+      - Name: Scope 6x
+        ID: 7
+        Description: 
+      - Name: Scope 8x
+        ID: 8
+        Description: 
+      Foregrips:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Grip
+        ID: 1
+        Description: 
+      - Name: Bipod
+        ID: 2
+        Description: 
+      - Name: Bipod 2
+        ID: 3
+        Description: 
       Magazines:
       - Name: Normal
         ID: 0
         Description: 
-      - Name: Extended
+      Lasers:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Laser
         ID: 1
         Description: 
-  - WeaponName: AR_01
-    GunID: 8
+      - Name: Flash
+        ID: 2
+        Description: 
+  - WeaponName: Handgun_02
+    GunID: 13
     Camos:
     - Name: Default
       GlobalID: 0
       ID: 0
-      Camo: {fileID: 2100000, guid: d06140c5eb850234cbd0989044e564e4, type: 2}
+      Camo: {fileID: 2100000, guid: cd63763af54801c4a953fe47b452497e, type: 2}
       OverridePreview: {fileID: 0}
       ofWeaponID: 4
     - Name: Urban
       GlobalID: 1
       ID: 1
-      Camo: {fileID: 2100000, guid: 0f5323b734db4354ea18bd943bc8c8aa, type: 2}
+      Camo: {fileID: 2100000, guid: d02bc8852dca1f04cb4bc15ff06b9418, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 4
+    - Name: Artic
+      GlobalID: 2
+      ID: 2
+      Camo: {fileID: 2100000, guid: b91b2397a27f13044a5634a548fce076, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 4
+    - Name: Toxi
+      GlobalID: 3
+      ID: 3
+      Camo: {fileID: 2100000, guid: 39fd7e908f4cca3418157b39161347fb, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 4
+    - Name: Patriot
+      GlobalID: 4
+      ID: 4
+      Camo: {fileID: 2100000, guid: 50246aca79a845b40a8622da984ad45a, type: 2}
       OverridePreview: {fileID: 0}
       ofWeaponID: 4
     Attachments:
@@ -233,26 +462,1188 @@ MonoBehaviour:
       - Name: Silencer
         ID: 1
         Description: 
-      - Name: Small Barrel
+      - Name: Silencer 2
         ID: 2
         Description: 
+      - Name: Silencer 3
+        ID: 3
+        Description: 
       Sights:
-      - Name: Iron Sight
+      - Name: None
         ID: 0
         Description: 
       - Name: Holo Sight
         ID: 1
         Description: 
-      - Name: Cobra
+      - Name: Red Dot
         ID: 2
         Description: 
-      Foregrips: []
+      - Name: Cobra
+        ID: 3
+        Description: 
+      - Name: Holo Sight
+        ID: 4
+        Description: 
+      - Name: Scope 4x
+        ID: 5
+        Description: 
+      - Name: Scope 5x
+        ID: 6
+        Description: 
+      - Name: Scope 6x
+        ID: 7
+        Description: 
+      - Name: Scope 8x
+        ID: 8
+        Description: 
+      Foregrips:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Grip
+        ID: 1
+        Description: 
+      - Name: Bipod
+        ID: 2
+        Description: 
+      - Name: Bipod 2
+        ID: 3
+        Description: 
       Magazines:
       - Name: Normal
         ID: 0
         Description: 
-      - Name: Extended
+      Lasers:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Laser
         ID: 1
+        Description: 
+      - Name: Flash
+        ID: 2
+        Description: 
+  - WeaponName: Handgun_03
+    GunID: 11
+    Camos:
+    - Name: Default
+      GlobalID: 0
+      ID: 0
+      Camo: {fileID: 2100000, guid: cd63763af54801c4a953fe47b452497e, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 5
+    - Name: Urban
+      GlobalID: 1
+      ID: 1
+      Camo: {fileID: 2100000, guid: d02bc8852dca1f04cb4bc15ff06b9418, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 5
+    - Name: Artic
+      GlobalID: 2
+      ID: 2
+      Camo: {fileID: 2100000, guid: b91b2397a27f13044a5634a548fce076, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 5
+    - Name: Toxi
+      GlobalID: 3
+      ID: 3
+      Camo: {fileID: 2100000, guid: 39fd7e908f4cca3418157b39161347fb, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 5
+    - Name: Patriot
+      GlobalID: 4
+      ID: 4
+      Camo: {fileID: 2100000, guid: 50246aca79a845b40a8622da984ad45a, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 5
+    Attachments:
+      Suppressers:
+      - Name: No Suppressor
+        ID: 0
+        Description: 
+      - Name: Silencer
+        ID: 1
+        Description: 
+      - Name: Silencer 2
+        ID: 2
+        Description: 
+      - Name: Silencer 3
+        ID: 3
+        Description: 
+      Sights:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Holo Sight
+        ID: 1
+        Description: 
+      - Name: Red Dot
+        ID: 2
+        Description: 
+      - Name: Cobra
+        ID: 3
+        Description: 
+      - Name: Holo Sight
+        ID: 4
+        Description: 
+      - Name: Scope 4x
+        ID: 5
+        Description: 
+      - Name: Scope 5x
+        ID: 6
+        Description: 
+      - Name: Scope 6x
+        ID: 7
+        Description: 
+      - Name: Scope 8x
+        ID: 8
+        Description: 
+      Foregrips:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Grip
+        ID: 1
+        Description: 
+      - Name: Bipod
+        ID: 2
+        Description: 
+      - Name: Bipod 2
+        ID: 3
+        Description: 
+      Magazines:
+      - Name: Normal
+        ID: 0
+        Description: 
+      Lasers:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Laser
+        ID: 1
+        Description: 
+      - Name: Flash
+        ID: 2
+        Description: 
+  - WeaponName: Handgun_04
+    GunID: 14
+    Camos:
+    - Name: Default
+      GlobalID: 0
+      ID: 0
+      Camo: {fileID: 2100000, guid: cd63763af54801c4a953fe47b452497e, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 6
+    - Name: Urban
+      GlobalID: 1
+      ID: 1
+      Camo: {fileID: 2100000, guid: d02bc8852dca1f04cb4bc15ff06b9418, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 6
+    - Name: Artic
+      GlobalID: 2
+      ID: 2
+      Camo: {fileID: 2100000, guid: b91b2397a27f13044a5634a548fce076, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 6
+    - Name: Toxi
+      GlobalID: 3
+      ID: 3
+      Camo: {fileID: 2100000, guid: 39fd7e908f4cca3418157b39161347fb, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 6
+    - Name: Patriot
+      GlobalID: 4
+      ID: 4
+      Camo: {fileID: 2100000, guid: 50246aca79a845b40a8622da984ad45a, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 6
+    Attachments:
+      Suppressers:
+      - Name: No Suppressor
+        ID: 0
+        Description: 
+      - Name: Silencer
+        ID: 1
+        Description: 
+      - Name: Silencer 2
+        ID: 2
+        Description: 
+      - Name: Silencer 3
+        ID: 3
+        Description: 
+      Sights:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Holo Sight
+        ID: 1
+        Description: 
+      - Name: Red Dot
+        ID: 2
+        Description: 
+      - Name: Cobra
+        ID: 3
+        Description: 
+      - Name: Holo Sight
+        ID: 4
+        Description: 
+      - Name: Scope 4x
+        ID: 5
+        Description: 
+      - Name: Scope 5x
+        ID: 6
+        Description: 
+      - Name: Scope 6x
+        ID: 7
+        Description: 
+      - Name: Scope 8x
+        ID: 8
+        Description: 
+      Foregrips:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Grip
+        ID: 1
+        Description: 
+      - Name: Bipod
+        ID: 2
+        Description: 
+      - Name: Bipod 2
+        ID: 3
+        Description: 
+      Magazines:
+      - Name: Normal
+        ID: 0
+        Description: 
+      Lasers:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Laser
+        ID: 1
+        Description: 
+      - Name: Flash
+        ID: 2
+        Description: 
+  - WeaponName: SMG_01
+    GunID: 15
+    Camos:
+    - Name: Default
+      GlobalID: 0
+      ID: 0
+      Camo: {fileID: 2100000, guid: cd63763af54801c4a953fe47b452497e, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 7
+    - Name: Urban
+      GlobalID: 1
+      ID: 1
+      Camo: {fileID: 2100000, guid: d02bc8852dca1f04cb4bc15ff06b9418, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 7
+    - Name: Artic
+      GlobalID: 2
+      ID: 2
+      Camo: {fileID: 2100000, guid: b91b2397a27f13044a5634a548fce076, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 7
+    - Name: Toxi
+      GlobalID: 3
+      ID: 3
+      Camo: {fileID: 2100000, guid: 39fd7e908f4cca3418157b39161347fb, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 7
+    - Name: Patriot
+      GlobalID: 4
+      ID: 4
+      Camo: {fileID: 2100000, guid: 50246aca79a845b40a8622da984ad45a, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 7
+    Attachments:
+      Suppressers:
+      - Name: No Suppressor
+        ID: 0
+        Description: 
+      - Name: Silencer
+        ID: 1
+        Description: 
+      - Name: Silencer 2
+        ID: 2
+        Description: 
+      - Name: Silencer 3
+        ID: 3
+        Description: 
+      Sights:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Holo Sight
+        ID: 1
+        Description: 
+      - Name: Red Dot
+        ID: 2
+        Description: 
+      - Name: Cobra
+        ID: 3
+        Description: 
+      - Name: Holo Sight
+        ID: 4
+        Description: 
+      - Name: Scope 4x
+        ID: 5
+        Description: 
+      - Name: Scope 5x
+        ID: 6
+        Description: 
+      - Name: Scope 6x
+        ID: 7
+        Description: 
+      - Name: Scope 8x
+        ID: 8
+        Description: 
+      Foregrips:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Grip
+        ID: 1
+        Description: 
+      - Name: Bipod
+        ID: 2
+        Description: 
+      - Name: Bipod 2
+        ID: 3
+        Description: 
+      Magazines:
+      - Name: Normal
+        ID: 0
+        Description: 
+      Lasers:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Laser
+        ID: 1
+        Description: 
+      - Name: Flash
+        ID: 2
+        Description: 
+  - WeaponName: SMG_02
+    GunID: 16
+    Camos:
+    - Name: Default
+      GlobalID: 0
+      ID: 0
+      Camo: {fileID: 2100000, guid: cd63763af54801c4a953fe47b452497e, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 8
+    - Name: Urban
+      GlobalID: 1
+      ID: 1
+      Camo: {fileID: 2100000, guid: d02bc8852dca1f04cb4bc15ff06b9418, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 8
+    - Name: Artic
+      GlobalID: 2
+      ID: 2
+      Camo: {fileID: 2100000, guid: b91b2397a27f13044a5634a548fce076, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 8
+    - Name: Toxi
+      GlobalID: 3
+      ID: 3
+      Camo: {fileID: 2100000, guid: 39fd7e908f4cca3418157b39161347fb, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 8
+    - Name: Patriot
+      GlobalID: 4
+      ID: 4
+      Camo: {fileID: 2100000, guid: 50246aca79a845b40a8622da984ad45a, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 8
+    Attachments:
+      Suppressers:
+      - Name: No Suppressor
+        ID: 0
+        Description: 
+      - Name: Silencer
+        ID: 1
+        Description: 
+      - Name: Silencer 2
+        ID: 2
+        Description: 
+      - Name: Silencer 3
+        ID: 3
+        Description: 
+      Sights:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Holo Sight
+        ID: 1
+        Description: 
+      - Name: Red Dot
+        ID: 2
+        Description: 
+      - Name: Cobra
+        ID: 3
+        Description: 
+      - Name: Holo Sight
+        ID: 4
+        Description: 
+      - Name: Scope 4x
+        ID: 5
+        Description: 
+      - Name: Scope 5x
+        ID: 6
+        Description: 
+      - Name: Scope 6x
+        ID: 7
+        Description: 
+      - Name: Scope 8x
+        ID: 8
+        Description: 
+      Foregrips:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Grip
+        ID: 1
+        Description: 
+      - Name: Bipod
+        ID: 2
+        Description: 
+      - Name: Bipod 2
+        ID: 3
+        Description: 
+      Magazines:
+      - Name: Normal
+        ID: 0
+        Description: 
+      Lasers:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Laser
+        ID: 1
+        Description: 
+      - Name: Flash
+        ID: 2
+        Description: 
+  - WeaponName: SMG_03
+    GunID: 17
+    Camos:
+    - Name: Default
+      GlobalID: 0
+      ID: 0
+      Camo: {fileID: 2100000, guid: cd63763af54801c4a953fe47b452497e, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 9
+    - Name: Urban
+      GlobalID: 1
+      ID: 1
+      Camo: {fileID: 2100000, guid: d02bc8852dca1f04cb4bc15ff06b9418, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 9
+    - Name: Artic
+      GlobalID: 2
+      ID: 2
+      Camo: {fileID: 2100000, guid: b91b2397a27f13044a5634a548fce076, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 9
+    - Name: Toxi
+      GlobalID: 3
+      ID: 3
+      Camo: {fileID: 2100000, guid: 39fd7e908f4cca3418157b39161347fb, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 9
+    - Name: Patriot
+      GlobalID: 4
+      ID: 4
+      Camo: {fileID: 2100000, guid: 50246aca79a845b40a8622da984ad45a, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 9
+    Attachments:
+      Suppressers:
+      - Name: No Suppressor
+        ID: 0
+        Description: 
+      - Name: Silencer
+        ID: 1
+        Description: 
+      - Name: Silencer 2
+        ID: 2
+        Description: 
+      - Name: Silencer 3
+        ID: 3
+        Description: 
+      Sights:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Holo Sight
+        ID: 1
+        Description: 
+      - Name: Red Dot
+        ID: 2
+        Description: 
+      - Name: Cobra
+        ID: 3
+        Description: 
+      - Name: Holo Sight
+        ID: 4
+        Description: 
+      - Name: Scope 4x
+        ID: 5
+        Description: 
+      - Name: Scope 5x
+        ID: 6
+        Description: 
+      - Name: Scope 6x
+        ID: 7
+        Description: 
+      - Name: Scope 8x
+        ID: 8
+        Description: 
+      Foregrips:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Grip
+        ID: 1
+        Description: 
+      - Name: Bipod
+        ID: 2
+        Description: 
+      - Name: Bipod 2
+        ID: 3
+        Description: 
+      Magazines:
+      - Name: Normal
+        ID: 0
+        Description: 
+      Lasers:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Laser
+        ID: 1
+        Description: 
+      - Name: Flash
+        ID: 2
+        Description: 
+  - WeaponName: SMG_04
+    GunID: 18
+    Camos:
+    - Name: Default
+      GlobalID: 0
+      ID: 0
+      Camo: {fileID: 2100000, guid: cd63763af54801c4a953fe47b452497e, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 10
+    - Name: Urban
+      GlobalID: 1
+      ID: 1
+      Camo: {fileID: 2100000, guid: d02bc8852dca1f04cb4bc15ff06b9418, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 10
+    - Name: Artic
+      GlobalID: 2
+      ID: 2
+      Camo: {fileID: 2100000, guid: b91b2397a27f13044a5634a548fce076, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 10
+    - Name: Toxi
+      GlobalID: 3
+      ID: 3
+      Camo: {fileID: 2100000, guid: 39fd7e908f4cca3418157b39161347fb, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 10
+    - Name: Patriot
+      GlobalID: 4
+      ID: 4
+      Camo: {fileID: 2100000, guid: 50246aca79a845b40a8622da984ad45a, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 10
+    Attachments:
+      Suppressers:
+      - Name: No Suppressor
+        ID: 0
+        Description: 
+      - Name: Silencer
+        ID: 1
+        Description: 
+      - Name: Silencer 2
+        ID: 2
+        Description: 
+      - Name: Silencer 3
+        ID: 3
+        Description: 
+      Sights:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Holo Sight
+        ID: 1
+        Description: 
+      - Name: Red Dot
+        ID: 2
+        Description: 
+      - Name: Cobra
+        ID: 3
+        Description: 
+      - Name: Holo Sight
+        ID: 4
+        Description: 
+      - Name: Scope 4x
+        ID: 5
+        Description: 
+      - Name: Scope 5x
+        ID: 6
+        Description: 
+      - Name: Scope 6x
+        ID: 7
+        Description: 
+      - Name: Scope 8x
+        ID: 8
+        Description: 
+      Foregrips:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Grip
+        ID: 1
+        Description: 
+      - Name: Bipod
+        ID: 2
+        Description: 
+      - Name: Bipod 2
+        ID: 3
+        Description: 
+      Magazines:
+      - Name: Normal
+        ID: 0
+        Description: 
+      Lasers:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Laser
+        ID: 1
+        Description: 
+      - Name: Flash
+        ID: 2
+        Description: 
+  - WeaponName: SMG_05
+    GunID: 19
+    Camos:
+    - Name: Default
+      GlobalID: 0
+      ID: 0
+      Camo: {fileID: 2100000, guid: cd63763af54801c4a953fe47b452497e, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 11
+    - Name: Urban
+      GlobalID: 1
+      ID: 1
+      Camo: {fileID: 2100000, guid: d02bc8852dca1f04cb4bc15ff06b9418, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 11
+    - Name: Artic
+      GlobalID: 2
+      ID: 2
+      Camo: {fileID: 2100000, guid: b91b2397a27f13044a5634a548fce076, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 11
+    - Name: Toxi
+      GlobalID: 3
+      ID: 3
+      Camo: {fileID: 2100000, guid: 39fd7e908f4cca3418157b39161347fb, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 11
+    - Name: Patriot
+      GlobalID: 4
+      ID: 4
+      Camo: {fileID: 2100000, guid: 50246aca79a845b40a8622da984ad45a, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 11
+    Attachments:
+      Suppressers:
+      - Name: No Suppressor
+        ID: 0
+        Description: 
+      - Name: Silencer
+        ID: 1
+        Description: 
+      - Name: Silencer 2
+        ID: 2
+        Description: 
+      - Name: Silencer 3
+        ID: 3
+        Description: 
+      Sights:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Holo Sight
+        ID: 1
+        Description: 
+      - Name: Red Dot
+        ID: 2
+        Description: 
+      - Name: Cobra
+        ID: 3
+        Description: 
+      - Name: Holo Sight
+        ID: 4
+        Description: 
+      - Name: Scope 4x
+        ID: 5
+        Description: 
+      - Name: Scope 5x
+        ID: 6
+        Description: 
+      - Name: Scope 6x
+        ID: 7
+        Description: 
+      - Name: Scope 8x
+        ID: 8
+        Description: 
+      Foregrips:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Grip
+        ID: 1
+        Description: 
+      - Name: Bipod
+        ID: 2
+        Description: 
+      - Name: Bipod 2
+        ID: 3
+        Description: 
+      Magazines:
+      - Name: Normal
+        ID: 0
+        Description: 
+      Lasers:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Laser
+        ID: 1
+        Description: 
+      - Name: Flash
+        ID: 2
+        Description: 
+  - WeaponName: Sniper_01
+    GunID: 20
+    Camos:
+    - Name: Default
+      GlobalID: 0
+      ID: 0
+      Camo: {fileID: 2100000, guid: cd63763af54801c4a953fe47b452497e, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 12
+    - Name: Urban
+      GlobalID: 1
+      ID: 1
+      Camo: {fileID: 2100000, guid: d02bc8852dca1f04cb4bc15ff06b9418, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 12
+    - Name: Artic
+      GlobalID: 2
+      ID: 2
+      Camo: {fileID: 2100000, guid: b91b2397a27f13044a5634a548fce076, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 12
+    - Name: Toxi
+      GlobalID: 3
+      ID: 3
+      Camo: {fileID: 2100000, guid: 39fd7e908f4cca3418157b39161347fb, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 12
+    - Name: Patriot
+      GlobalID: 4
+      ID: 4
+      Camo: {fileID: 2100000, guid: 50246aca79a845b40a8622da984ad45a, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 12
+    Attachments:
+      Suppressers:
+      - Name: No Suppressor
+        ID: 0
+        Description: 
+      - Name: Silencer
+        ID: 1
+        Description: 
+      - Name: Silencer 2
+        ID: 2
+        Description: 
+      - Name: Silencer 3
+        ID: 3
+        Description: 
+      Sights:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Holo Sight
+        ID: 1
+        Description: 
+      - Name: Red Dot
+        ID: 2
+        Description: 
+      - Name: Cobra
+        ID: 3
+        Description: 
+      - Name: Holo Sight
+        ID: 4
+        Description: 
+      - Name: Scope 4x
+        ID: 5
+        Description: 
+      - Name: Scope 5x
+        ID: 6
+        Description: 
+      - Name: Scope 6x
+        ID: 7
+        Description: 
+      - Name: Scope 8x
+        ID: 8
+        Description: 
+      Foregrips:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Grip
+        ID: 1
+        Description: 
+      - Name: Bipod
+        ID: 2
+        Description: 
+      - Name: Bipod 2
+        ID: 3
+        Description: 
+      Magazines:
+      - Name: Normal
+        ID: 0
+        Description: 
+      Lasers:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Laser
+        ID: 1
+        Description: 
+      - Name: Flash
+        ID: 2
+        Description: 
+  - WeaponName: Sniper_02
+    GunID: 21
+    Camos:
+    - Name: Default
+      GlobalID: 0
+      ID: 0
+      Camo: {fileID: 2100000, guid: cd63763af54801c4a953fe47b452497e, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 13
+    - Name: Urban
+      GlobalID: 1
+      ID: 1
+      Camo: {fileID: 2100000, guid: d02bc8852dca1f04cb4bc15ff06b9418, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 13
+    - Name: Artic
+      GlobalID: 2
+      ID: 2
+      Camo: {fileID: 2100000, guid: b91b2397a27f13044a5634a548fce076, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 13
+    - Name: Toxi
+      GlobalID: 3
+      ID: 3
+      Camo: {fileID: 2100000, guid: 39fd7e908f4cca3418157b39161347fb, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 13
+    - Name: Patriot
+      GlobalID: 4
+      ID: 4
+      Camo: {fileID: 2100000, guid: 50246aca79a845b40a8622da984ad45a, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 13
+    Attachments:
+      Suppressers:
+      - Name: No Suppressor
+        ID: 0
+        Description: 
+      - Name: Silencer
+        ID: 1
+        Description: 
+      - Name: Silencer 2
+        ID: 2
+        Description: 
+      - Name: Silencer 3
+        ID: 3
+        Description: 
+      Sights:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Holo Sight
+        ID: 1
+        Description: 
+      - Name: Red Dot
+        ID: 2
+        Description: 
+      - Name: Cobra
+        ID: 3
+        Description: 
+      - Name: Holo Sight
+        ID: 4
+        Description: 
+      - Name: Scope 4x
+        ID: 5
+        Description: 
+      - Name: Scope 5x
+        ID: 6
+        Description: 
+      - Name: Scope 6x
+        ID: 7
+        Description: 
+      - Name: Scope 8x
+        ID: 8
+        Description: 
+      Foregrips:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Grip
+        ID: 1
+        Description: 
+      - Name: Bipod
+        ID: 2
+        Description: 
+      - Name: Bipod 2
+        ID: 3
+        Description: 
+      Magazines:
+      - Name: Normal
+        ID: 0
+        Description: 
+      Lasers:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Laser
+        ID: 1
+        Description: 
+      - Name: Flash
+        ID: 2
+        Description: 
+  - WeaponName: Sniper_03
+    GunID: 22
+    Camos:
+    - Name: Default
+      GlobalID: 0
+      ID: 0
+      Camo: {fileID: 2100000, guid: cd63763af54801c4a953fe47b452497e, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 14
+    - Name: Urban
+      GlobalID: 1
+      ID: 1
+      Camo: {fileID: 2100000, guid: d02bc8852dca1f04cb4bc15ff06b9418, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 14
+    - Name: Artic
+      GlobalID: 2
+      ID: 2
+      Camo: {fileID: 2100000, guid: b91b2397a27f13044a5634a548fce076, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 14
+    - Name: Toxi
+      GlobalID: 3
+      ID: 3
+      Camo: {fileID: 2100000, guid: 39fd7e908f4cca3418157b39161347fb, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 14
+    - Name: Patriot
+      GlobalID: 4
+      ID: 4
+      Camo: {fileID: 2100000, guid: 50246aca79a845b40a8622da984ad45a, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 14
+    Attachments:
+      Suppressers:
+      - Name: No Suppressor
+        ID: 0
+        Description: 
+      - Name: Silencer
+        ID: 1
+        Description: 
+      - Name: Silencer 2
+        ID: 2
+        Description: 
+      - Name: Silencer 3
+        ID: 3
+        Description: 
+      Sights:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Holo Sight
+        ID: 1
+        Description: 
+      - Name: Red Dot
+        ID: 2
+        Description: 
+      - Name: Cobra
+        ID: 3
+        Description: 
+      - Name: Holo Sight
+        ID: 4
+        Description: 
+      - Name: Scope 4x
+        ID: 5
+        Description: 
+      - Name: Scope 5x
+        ID: 6
+        Description: 
+      - Name: Scope 6x
+        ID: 7
+        Description: 
+      - Name: Scope 8x
+        ID: 8
+        Description: 
+      Foregrips:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Grip
+        ID: 1
+        Description: 
+      - Name: Bipod
+        ID: 2
+        Description: 
+      - Name: Bipod 2
+        ID: 3
+        Description: 
+      Magazines:
+      - Name: Normal
+        ID: 0
+        Description: 
+      Lasers:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Laser
+        ID: 1
+        Description: 
+      - Name: Flash
+        ID: 2
+        Description: 
+  - WeaponName: Shotgun_01
+    GunID: 23
+    Camos:
+    - Name: Default
+      GlobalID: 0
+      ID: 0
+      Camo: {fileID: 2100000, guid: cd63763af54801c4a953fe47b452497e, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 15
+    - Name: Urban
+      GlobalID: 1
+      ID: 1
+      Camo: {fileID: 2100000, guid: d02bc8852dca1f04cb4bc15ff06b9418, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 15
+    - Name: Artic
+      GlobalID: 2
+      ID: 2
+      Camo: {fileID: 2100000, guid: b91b2397a27f13044a5634a548fce076, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 15
+    - Name: Toxi
+      GlobalID: 3
+      ID: 3
+      Camo: {fileID: 2100000, guid: 39fd7e908f4cca3418157b39161347fb, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 15
+    - Name: Patriot
+      GlobalID: 4
+      ID: 4
+      Camo: {fileID: 2100000, guid: 50246aca79a845b40a8622da984ad45a, type: 2}
+      OverridePreview: {fileID: 0}
+      ofWeaponID: 15
+    Attachments:
+      Suppressers:
+      - Name: No Suppressor
+        ID: 0
+        Description: 
+      - Name: Silencer
+        ID: 1
+        Description: 
+      - Name: Silencer 2
+        ID: 2
+        Description: 
+      - Name: Silencer 3
+        ID: 3
+        Description: 
+      Sights:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Holo Sight
+        ID: 1
+        Description: 
+      - Name: Red Dot
+        ID: 2
+        Description: 
+      - Name: Cobra
+        ID: 3
+        Description: 
+      - Name: Holo Sight
+        ID: 4
+        Description: 
+      - Name: Scope 4x
+        ID: 5
+        Description: 
+      - Name: Scope 5x
+        ID: 6
+        Description: 
+      - Name: Scope 6x
+        ID: 7
+        Description: 
+      - Name: Scope 8x
+        ID: 8
+        Description: 
+      Foregrips:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Grip
+        ID: 1
+        Description: 
+      - Name: Bipod
+        ID: 2
+        Description: 
+      - Name: Bipod 2
+        ID: 3
+        Description: 
+      Magazines:
+      - Name: Normal
+        ID: 0
+        Description: 
+      Lasers:
+      - Name: None
+        ID: 0
+        Description: 
+      - Name: Laser
+        ID: 1
+        Description: 
+      - Name: Flash
+        ID: 2
         Description: 
   GlobalCamos:
   - Name: Default

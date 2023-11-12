@@ -274,7 +274,7 @@ public class bl_MatchTimeManager : bl_MatchTimeManagerBase
             if (CurrentTime <= 30 && !roomClose && bl_PhotonNetwork.IsMasterClient)
             {
                 roomClose = true;
-                if (bl_RoomSettings.Instance.CurrentRoomInfo.roundStyle == RoundStyle.OneMacht)
+                if (bl_RoomSettings.Instance.CurrentRoomInfo.roundStyle == RoundStyle.OneMatch)
                 {
                    // PhotonNetwork.CurrentRoom.IsOpen = false;
                    // PhotonNetwork.CurrentRoom.IsVisible = false;
@@ -352,7 +352,7 @@ public class bl_MatchTimeManager : bl_MatchTimeManagerBase
         if (!m_timeIsUp)
         {
             m_timeIsUp = true;
-            bl_GameManager.Instance.OnGameTimeFinish(bl_RoomSettings.Instance.CurrentRoomInfo.roundStyle == RoundStyle.OneMacht || cause == RoundFinishCause.GameFinish);
+            bl_GameManager.Instance.OnGameTimeFinish(bl_RoomSettings.Instance.CurrentRoomInfo.roundStyle == RoundStyle.OneMatch || cause == RoundFinishCause.GameFinish);
 
             // Save the gained XP in this game
             bl_UIReferences.Instance.ResumeScreen.CollectData();
@@ -422,7 +422,7 @@ public class bl_MatchTimeManager : bl_MatchTimeManagerBase
     {
         bl_UtilityHelper.LockCursor(false);
         var roundStyle = bl_RoomSettings.Instance.CurrentRoomInfo.roundStyle;
-        if (roundStyle == RoundStyle.OneMacht || roundStyle == RoundStyle.RoundsOneMatch)
+        if (roundStyle == RoundStyle.OneMatch || roundStyle == RoundStyle.RoundsOneMatch)
         {
             bl_UIReferences.Instance.ResumeScreen.Show();
         }

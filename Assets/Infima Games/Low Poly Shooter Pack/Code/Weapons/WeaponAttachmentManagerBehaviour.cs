@@ -14,8 +14,11 @@ namespace InfimaGames.LowPolyShooterPack
         /// <summary>
         /// Awake.
         /// </summary>
-        protected virtual void Awake(){} 
-        public virtual void SetupAttachments(string json = "0,0,0,0,0,0"){}
+        protected virtual void Awake(){}
+
+        public abstract void SetupAttachments(string json = "0,0,0,0,0,0");
+
+        public abstract void DeEquip();
 
         /// <summary>
         /// Start.

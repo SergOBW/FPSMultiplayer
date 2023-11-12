@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using Random = UnityEngine.Random;
 
 namespace MFPS.Addon.Customizer
 {
@@ -56,8 +58,16 @@ namespace MFPS.Addon.Customizer
         {
             if (!firstApply)
             {
-                //AttachmentsIDs = bl_CustomizerData.Instance.LoadAttachmentsForWeapon(WeaponName);
-                AttachmentsIDs = new int[] { 0, 0, 0, 0, 0, 0 };
+                try
+                {
+                    AttachmentsIDs = bl_CustomizerData.Instance.LoadAttachmentsForWeapon(WeaponName);
+                }
+                catch (Exception e)
+                {
+                    AttachmentsIDs = new int[] { 0, 0, 0, 0, 0, 0 };
+                    Console.WriteLine(e);
+                    throw;
+                }
                 CamoRender.ApplyCamo(WeaponName, AttachmentsIDs[5]);
                 firstApply = true;
             }

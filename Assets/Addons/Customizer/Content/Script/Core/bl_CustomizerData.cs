@@ -51,7 +51,6 @@ public class bl_CustomizerData : ScriptableObject
         if (PlayerPrefs.HasKey(key))
         {
             string t = PlayerPrefs.GetString(key);
-            Debug.Log(t);
             array = DecompileLine(t);
         }
         return array;
@@ -61,10 +60,6 @@ public class bl_CustomizerData : ScriptableObject
     {
         int[] array = new int[6] { 0, 0, 0, 0, 0, 0 };
         string[] split = line.Split(","[0]);
-        foreach (var lineee in split)
-        {
-            Debug.Log(lineee);
-        }
         array[0] = int.Parse(split[0]);
         array[1] = int.Parse(split[1]);
         array[2] = int.Parse(split[2]);
@@ -77,7 +72,6 @@ public class bl_CustomizerData : ScriptableObject
     public string CompileArray(int[] array)
     {
         string line = string.Join(",", array.Select(x => x.ToString()).ToArray());
-        Debug.Log(line);
         return line;
     }
 

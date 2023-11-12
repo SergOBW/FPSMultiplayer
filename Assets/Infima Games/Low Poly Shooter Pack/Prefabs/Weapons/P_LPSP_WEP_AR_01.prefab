@@ -396,7 +396,6 @@ MonoBehaviour:
   - {fileID: 5784004909769752627}
   - {fileID: 4368570769247342424}
   - {fileID: 8905485798253975877}
-  - {fileID: 1406960541904844308}
   muzzleIndex: 3
   muzzleIndexRandom: 0
   muzzleArray:
@@ -419,6 +418,8 @@ MonoBehaviour:
   magazineIndexRandom: 0
   magazineArray:
   - {fileID: 6959441203472173576}
+  isFPWeapon: 1
+  weaponCustomizerID: 0
 --- !u!114 &524015489424269637
 MonoBehaviour:
   m_ObjectHideFlags: 0

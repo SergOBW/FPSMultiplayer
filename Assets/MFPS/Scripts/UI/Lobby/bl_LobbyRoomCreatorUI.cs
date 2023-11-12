@@ -123,7 +123,7 @@ public class bl_LobbyRoomCreatorUI : MonoBehaviour
     public bool FriendlyFire => FriendlyFireSelector.CurrentSelectionAsBool();
     public bool BotsActive => BotsActiveSelector.CurrentSelectionAsBool();
     public bool AutoTeamSelection => TeamSelectionSelector.CurrentSelectionAsBool();
-    public RoundStyle GamePerRound => PerRoundSelector.CurrentSelectionAsBool() == true ? RoundStyle.Rounds : RoundStyle.OneMacht;
+    public RoundStyle GamePerRound => PerRoundSelector.CurrentSelectionAsBool() == true ? RoundStyle.Rounds : RoundStyle.OneMatch;
     #endregion
 
     private static bl_LobbyRoomCreatorUI _instance;

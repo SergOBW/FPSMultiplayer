@@ -629,6 +629,8 @@ MonoBehaviour:
   magazineIndexRandom: 1
   magazineArray:
   - {fileID: 7413262085214997486}
+  isFPWeapon: 1
+  weaponCustomizerID: 12
 --- !u!114 &3803130821125631615
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ namespace MFPS.Runtime.UI.Layout
         public override void Show(string winner)
         {
             content.SetActive(true);
-            FinalUIText.text = (bl_RoomSettings.Instance.CurrentRoomInfo.roundStyle == RoundStyle.OneMacht) ? bl_GameTexts.FinalOneMatch.Localized(38) : bl_GameTexts.FinalRounds.Localized(32);
+            FinalUIText.text = (bl_RoomSettings.Instance.CurrentRoomInfo.roundStyle == RoundStyle.OneMatch) ? bl_GameTexts.FinalOneMatch.Localized(38) : bl_GameTexts.FinalRounds.Localized(32);
             FinalWinnerText.text = string.Format("{0} {1}", winner, bl_GameTexts.FinalWinner).Localized(33).ToUpper();
         }
 

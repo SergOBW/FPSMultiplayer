@@ -122,14 +122,12 @@ namespace InfimaGames.LowPolyShooterPack
         /// </summary>
         private MagazineBehaviour magazineBehaviour;
         
-        private PhotonView photonView;
+        [SerializeField]private PhotonView photonView;
         private bl_Gun Gun;
         private bool isSync;
         private int[] AttachmentsIds = new int[6] { 0, 0, 0, 0, 0, 0};
-        public string WeaponName;
-        
-        
-
+        private string weaponName;
+        [SerializeField] private int weaponCustomizerID;
         #endregion
 
         #region UNITY FUNCTIONS
@@ -198,13 +196,12 @@ namespace InfimaGames.LowPolyShooterPack
         
         public override void SetupAttachments(string json = "0,0,0,0,0,0")
         {
-            if(photonView == null) { photonView = bl_PlayerReferences.LocalPlayer.photonView; }
             if (isFPWeapon && !isSync)
             {
                 Gun = GetComponent<bl_Gun>();
-                WeaponName = bl_CustomizerData.Instance.Weapons[4].WeaponName;
-                Debug.Log(WeaponName);
-                AttachmentsIds = bl_CustomizerData.Instance.LoadAttachmentsForWeapon(WeaponName);
+                weaponName = bl_CustomizerData.Instance.Weapons[weaponCustomizerID].WeaponName;
+                AttachmentsIds = bl_CustomizerData.Instance.LoadAttachmentsForWeapon(weaponName);
+                Debug.Log($"My weapon setup = {bl_CustomizerData.Instance.LoadAttachmentsForWeapon(weaponName)}");
                 ApplyAttachments();
                 string line = bl_CustomizerData.Instance.CompileArray(AttachmentsIds);
                 photonView.RPC("SyncCustomizer", RpcTarget.Others, Gun.GunID, line);
@@ -213,64 +210,62 @@ namespace InfimaGames.LowPolyShooterPack
             }
             else
             {
-                Debug .Log(json);
                 AttachmentsIds = bl_CustomizerData.Instance.DecompileLine(json);
+                Debug.Log($"Other weapon setup = {json}");
                 ApplyAttachments();
             }
         }
 
+        public override void DeEquip()
+        {
+            isSync = false;
+        }
+
         private void ApplyAttachments()
         {
-            if (AttachmentsIds == new []{0,0,0,0,0,0})
-            {
-                //Randomize. This allows us to spice things up a little!
-                scopeBehaviour = scopeDefaultBehaviour;
-                //Set Active.
-                scopeBehaviour.gameObject.SetActive(true);
-            
-                //Randomize. This allows us to spice things up a little!
-                muzzleIndex = 0;
-                //Select Muzzle!
-                muzzleBehaviour = muzzleArray.SelectAndSetActive(muzzleIndex);
-
-                //Randomize. This allows us to spice things up a little!
-                if (laserArray.Length > 0)
-                {                laserIndex = 0;
-                    //Select Laser!
-                    laserBehaviour = laserArray.SelectAndSetActive(laserIndex);
-                    
-                }
-
-                if (gripArray.Length > 0 )
-                {
-                    gripIndex = 0;
-                    //Select Grip!
-                    gripBehaviour = gripArray.SelectAndSetActive(gripIndex);
-                }
-            
-                //Randomize. This allows us to spice things up a little!
-                magazineIndex = 0;
-                //Select Magazine!
-                magazineBehaviour = magazineArray.SelectAndSetActive(magazineIndex);
-            }
-
             muzzleIndex = AttachmentsIds[0];
             scopeIndex = AttachmentsIds[1];
             gripIndex = AttachmentsIds[2];
             magazineIndex = AttachmentsIds[3];
             laserIndex = AttachmentsIds[4];
             
-            scopeBehaviour = scopeArray[scopeIndex];
-            
-            scopeBehaviour.gameObject.SetActive(true);
-            
+
             muzzleBehaviour = muzzleArray.SelectAndSetActive(muzzleIndex);
             
-            laserBehaviour = laserArray.SelectAndSetActive(laserIndex);
-
-            gripBehaviour = gripArray.SelectAndSetActive(gripIndex);
+            if (scopeIndex <= 0)
+            {
+                scopeBehaviour = scopeDefaultBehaviour;
             
+                scopeBehaviour.gameObject.SetActive(true);
+            }
+            else
+            {
+                scopeBehaviour = scopeArray[scopeIndex -1];
+
+                if (!isFPWeapon)
+                {
+                    Camera otherCamera = scopeBehaviour.gameObject.GetComponentInChildren<Camera>();
+                    if (otherCamera != null)
+                    {
+                        otherCamera.enabled = false;
+                    }
+                }
+            
+                scopeBehaviour.gameObject.SetActive(true);
+            }
+                        
+            if (gripIndex > 0)
+            {
+                gripBehaviour = gripArray.SelectAndSetActive(gripIndex - 1);
+            }
+
             magazineBehaviour = magazineArray.SelectAndSetActive(magazineIndex);
+            
+            if (laserIndex > 0)
+            {
+                laserBehaviour = laserArray.SelectAndSetActive(laserIndex - 1);
+            }
+            
         }
 
         private void OnNewPlayerEnter(Player obj)

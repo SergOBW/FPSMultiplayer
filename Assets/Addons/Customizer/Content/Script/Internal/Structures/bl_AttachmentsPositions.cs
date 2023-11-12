@@ -21,10 +21,11 @@ namespace MFPS.Addon.Customizer
         public Transform LaserPosition;
         public Transform ModelParent;
 
-        [HideInInspector] public Vector3[] defaultPositions = new Vector3[] { Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, };
+        [HideInInspector] public Vector3[] defaultPositions = new Vector3[5] { Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero};
 
         public void Init()
         {
+            defaultPositions = new Vector3[5] { Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero, Vector3.zero};
             if (BarrelRoot != null)
             {
                 defaultPositions[0] = BarrelRoot.transform.localPosition;
@@ -43,7 +44,7 @@ namespace MFPS.Addon.Customizer
             }
             if (LaserRoot != null)
             {
-                defaultPositions[3] = LaserPosition.transform.localPosition;
+                defaultPositions[4] = LaserPosition.transform.localPosition;
             }
         }
     }
