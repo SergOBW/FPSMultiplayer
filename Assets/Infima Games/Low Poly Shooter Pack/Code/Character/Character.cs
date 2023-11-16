@@ -626,7 +626,7 @@ namespace InfimaGames.LowPolyShooterPack
 			//Increase shots fired. We use this value to increase the spread, and also to apply recoil, so
 			//it is very important that we keep it up to date.
 			shotsFired++;
-			
+			 
 			//Save the shot time, so we can calculate the fire rate correctly.
 			lastShotTime = Time.time;
 			//Fire the weapon! Make sure that we also pass the scope's spread multiplier if we're aiming.

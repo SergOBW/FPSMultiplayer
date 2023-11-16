@@ -201,7 +201,6 @@ namespace InfimaGames.LowPolyShooterPack
                 Gun = GetComponent<bl_Gun>();
                 weaponName = bl_CustomizerData.Instance.Weapons[weaponCustomizerID].WeaponName;
                 AttachmentsIds = bl_CustomizerData.Instance.LoadAttachmentsForWeapon(weaponName);
-                Debug.Log($"My weapon setup = {bl_CustomizerData.Instance.LoadAttachmentsForWeapon(weaponName)}");
                 ApplyAttachments();
                 string line = bl_CustomizerData.Instance.CompileArray(AttachmentsIds);
                 photonView.RPC("SyncCustomizer", RpcTarget.Others, Gun.GunID, line);

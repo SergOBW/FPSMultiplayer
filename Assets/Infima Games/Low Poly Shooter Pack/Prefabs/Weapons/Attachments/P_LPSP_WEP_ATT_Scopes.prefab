@@ -85,6 +85,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3644505754493758525, guid: a2962c3563c7ee246be224e9304464bd,
         type: 3}
+      propertyPath: fieldOfViewMultiplierAimWeapon
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644505754493758525, guid: a2962c3563c7ee246be224e9304464bd,
+        type: 3}
       propertyPath: aimingSway.look.location.vertical.z
       value: -0.01
       objectReference: {fileID: 0}
@@ -224,6 +229,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3644505754493758525, guid: 608b505d9e0fca141a46b8ac70f96ddc,
         type: 3}
+      propertyPath: fieldOfViewMultiplierAimWeapon
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644505754493758525, guid: 608b505d9e0fca141a46b8ac70f96ddc,
+        type: 3}
       propertyPath: aimingSway.movement.location.vertical.y
       value: 0.002
       objectReference: {fileID: 0}
@@ -325,6 +335,11 @@ PrefabInstance:
         type: 3}
       propertyPath: multiplierMouseSensitivity
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644505754493758525, guid: ec5fdd40e62797947a90a79df17d15f5,
+        type: 3}
+      propertyPath: fieldOfViewMultiplierAimWeapon
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 3644505754493758525, guid: ec5fdd40e62797947a90a79df17d15f5,
         type: 3}
@@ -452,6 +467,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3644505754493758525, guid: bdf11905568039047a943adbe62f5e53,
         type: 3}
+      propertyPath: fieldOfViewMultiplierAimWeapon
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644505754493758525, guid: bdf11905568039047a943adbe62f5e53,
+        type: 3}
       propertyPath: aimingSway.look.location.vertical.z
       value: -0.01
       objectReference: {fileID: 0}
@@ -561,8 +581,33 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3644505754493758525, guid: 2cadd769aff535a4fb4d7bf045dc579d,
         type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644505754493758525, guid: 2cadd769aff535a4fb4d7bf045dc579d,
+        type: 3}
+      propertyPath: offsetAimingLocation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644505754493758525, guid: 2cadd769aff535a4fb4d7bf045dc579d,
+        type: 3}
+      propertyPath: offsetAimingLocation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644505754493758525, guid: 2cadd769aff535a4fb4d7bf045dc579d,
+        type: 3}
+      propertyPath: fieldOfViewMultiplierAim
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644505754493758525, guid: 2cadd769aff535a4fb4d7bf045dc579d,
+        type: 3}
       propertyPath: multiplierMouseSensitivity
-      value: 0.6
+      value: 0.325
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644505754493758525, guid: 2cadd769aff535a4fb4d7bf045dc579d,
+        type: 3}
+      propertyPath: fieldOfViewMultiplierAimWeapon
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 3644505754493758525, guid: 2cadd769aff535a4fb4d7bf045dc579d,
         type: 3}
@@ -656,6 +701,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7295795339477665212, guid: 2cadd769aff535a4fb4d7bf045dc579d,
         type: 3}
+      propertyPath: field of view
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295795339477665212, guid: 2cadd769aff535a4fb4d7bf045dc579d,
+        type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 48951
       objectReference: {fileID: 0}
@@ -682,6 +732,11 @@ PrefabInstance:
         type: 3}
       propertyPath: multiplierMouseSensitivity
       value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644505754493758525, guid: 95e9b96c3ea7be948b7b8c162831d0ee,
+        type: 3}
+      propertyPath: fieldOfViewMultiplierAimWeapon
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 3644505754493758525, guid: 95e9b96c3ea7be948b7b8c162831d0ee,
         type: 3}
@@ -801,6 +856,11 @@ PrefabInstance:
         type: 3}
       propertyPath: multiplierMouseSensitivity
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644505754493758525, guid: f3d402d9c5423004a8e08fb187c46276,
+        type: 3}
+      propertyPath: fieldOfViewMultiplierAimWeapon
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 3644505754493758525, guid: f3d402d9c5423004a8e08fb187c46276,
         type: 3}
@@ -925,6 +985,11 @@ PrefabInstance:
         type: 3}
       propertyPath: multiplierMouseSensitivity
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644505754493758525, guid: 29f69acff7685bc43a0c3a86db1dbe85,
+        type: 3}
+      propertyPath: fieldOfViewMultiplierAimWeapon
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 3644505754493758525, guid: 29f69acff7685bc43a0c3a86db1dbe85,
         type: 3}

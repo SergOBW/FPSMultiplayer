@@ -15,4 +15,4 @@ MonoBehaviour:
   standingStateMultiplier: 1
   standingState: {fileID: 11400000, guid: 9d4104b4d02e73d4abcf3c639978f2a2, type: 2}
   aimingStateMultiplier: 0.35
-  aimingState: {fileID: 11400000, guid: 9d4104b4d02e73d4abcf3c639978f2a2, type: 2}
+  aimingState: {fileID: 11400000, guid: cbfe52a6ae9f54f4cab4fd40c9265047, type: 2}
