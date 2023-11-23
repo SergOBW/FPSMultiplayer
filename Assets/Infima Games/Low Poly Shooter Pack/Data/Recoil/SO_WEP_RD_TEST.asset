@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SO_WEP_RD_TEST
   m_EditorClassIdentifier: 
   standingStateMultiplier: 1
-  standingState: {fileID: 11400000, guid: 9d4104b4d02e73d4abcf3c639978f2a2, type: 2}
+  standingState: {fileID: 11400000, guid: ffb3131b0b08ed946a02fcd5dfa77b3d, type: 2}
   aimingStateMultiplier: 0.35
-  aimingState: {fileID: 11400000, guid: cbfe52a6ae9f54f4cab4fd40c9265047, type: 2}
+  aimingState: {fileID: 11400000, guid: ffb3131b0b08ed946a02fcd5dfa77b3d, type: 2}

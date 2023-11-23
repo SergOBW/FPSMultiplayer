@@ -324,11 +324,18 @@ namespace InfimaGames.LowPolyShooterPack
 			layerActions = characterAnimator.GetLayerIndex("Layer Actions");
 			//Cache a reference to the overlay layer's index.
 			layerOverlay = characterAnimator.GetLayerIndex("Layer Overlay");
-			
-			bl_EventHandler.onMatchStart += OnMatchStart;
-			bl_EventHandler.onLocalPlayerDeath += OnLocalPlayerDeath;
-			_canPlay = bl_MatchTimeManagerBase.HaveTimeStarted();
-			_blPlayerNetwork = bl_PlayerReferences.LocalPlayer.playerNetwork;
+
+			if (bl_GameManager.Instance != null)
+			{			
+				bl_EventHandler.onMatchStart += OnMatchStart;
+				bl_EventHandler.onLocalPlayerDeath += OnLocalPlayerDeath;
+				_canPlay = bl_MatchTimeManagerBase.HaveTimeStarted();
+				_blPlayerNetwork = bl_PlayerReferences.LocalPlayer.playerNetwork; 
+			}
+			else
+			{
+				_canPlay = true;
+			}
 		}
 		
 

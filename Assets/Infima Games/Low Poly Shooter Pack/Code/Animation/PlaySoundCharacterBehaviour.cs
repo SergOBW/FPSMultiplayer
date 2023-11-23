@@ -75,7 +75,14 @@ namespace InfimaGames.LowPolyShooterPack
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             //We need to get the character component.
-            playerCharacter ??= bl_GameManager.Instance.LocalPlayerReferences.playerCharacter;
+            if (bl_GameManager.Instance != null)
+            {
+                playerCharacter ??= bl_GameManager.Instance.LocalPlayerReferences.playerCharacter;
+            }
+            else
+            {
+                playerCharacter ??= FindObjectOfType<CharacterBehaviour>();
+            }
 
             //Get Inventory.
             playerInventory ??= playerCharacter.GetInventory();

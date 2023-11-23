@@ -36,7 +36,11 @@ namespace InfimaGames.LowPolyShooterPack
             foreach (WeaponBehaviour weapon in weapons)
                 weapon.gameObject.SetActive(false);
 
-            Setup(bl_PlayerReferences.LocalPlayer.gunManager.GetPlayerEquip());
+            if (bl_GameManager.Instance != null)
+            {
+                Setup(bl_PlayerReferences.LocalPlayer.gunManager.GetPlayerEquip());
+            }
+            
 
             //Equip.
             Equip(equippedAtStart);
@@ -70,7 +74,10 @@ namespace InfimaGames.LowPolyShooterPack
             //Activate the newly-equipped weapon.
             equipped.gameObject.SetActive(true);
             equipped.Equip();
-            bl_PlayerReferences.LocalPlayer.gunManager.SwitchByIndex(index);
+            if (bl_GameManager.Instance != null)
+            {
+                bl_PlayerReferences.LocalPlayer.gunManager.SwitchByIndex(index);
+            }
             return equipped;
         }
         

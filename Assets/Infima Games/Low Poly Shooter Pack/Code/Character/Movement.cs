@@ -203,14 +203,22 @@ namespace InfimaGames.LowPolyShooterPack
         protected override void Start()
         {
             //Cache the controller.
-            playerCharacter = bl_GameManager.Instance.LocalPlayerReferences.playerCharacter;
+            if (bl_GameManager.Instance != null)
+            {
+                playerCharacter = bl_GameManager.Instance.LocalPlayerReferences.playerCharacter;
+                bl_EventHandler.onMatchStart += OnMatchStart;
+                canMove = bl_MatchTimeManagerBase.HaveTimeStarted();
+                mouseLook.Init(transform, headRoot);
+            }
+            else
+            {
+                playerCharacter = GetComponent<CharacterBehaviour>();
+                canMove = true;
+            }
             
             //Save the default height.
             standingHeight = controller.height;
             
-            mouseLook.Init(transform, headRoot);
-            bl_EventHandler.onMatchStart += OnMatchStart;
-            canMove = bl_MatchTimeManagerBase.HaveTimeStarted();
         }
         
 

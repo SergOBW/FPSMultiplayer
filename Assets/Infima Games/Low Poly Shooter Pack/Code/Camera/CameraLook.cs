@@ -68,10 +68,31 @@ namespace InfimaGames.LowPolyShooterPack
         private void Start()
         {
             //Get Player Character.
+            if (bl_GameManager.Instance != null)
+            {
+                SetupNetworked();
+            }
+            else
+            {
+                SetupLocal();
+            }
+        }
+
+        private void SetupNetworked()
+        {
             _localPlayer = bl_GameManager.Instance.LocalPlayerReferences;
             playerCharacter = _localPlayer.playerCharacter;
             //Cache the character's initial rotation.
             rotationCharacter = _localPlayer.LocalRotation;
+            //Cache the camera's initial rotation.
+            rotationCamera = transform.localRotation;
+        }
+
+        private void SetupLocal()
+        {
+            playerCharacter = GetComponentInParent<CharacterBehaviour>();
+            //Cache the character's initial rotation.
+            rotationCharacter = playerCharacter.transform.localRotation;
             //Cache the camera's initial rotation.
             rotationCamera = transform.localRotation;
         }

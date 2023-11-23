@@ -31,14 +31,23 @@ namespace InfimaGames.LowPolyShooterPack.Interface
         public void SpawnCanvas()
         {
             //Spawn Interface.
-            if (isMine)
+            if (bl_GameManager.Instance != null)
+            {
+                if (isMine)
+                {
+                    _canvasGo = Instantiate(canvasPrefab);
+                    //Spawn Quality Settings Menu.
+                    _qualitySettingsGo = Instantiate(qualitySettingsPrefab);
+                
+                    bl_EventHandler.onLocalPlayerDeath += OnLocalPlayerDeath;
+
+                }
+            }
+            else
             {
                 _canvasGo = Instantiate(canvasPrefab);
                 //Spawn Quality Settings Menu.
                 _qualitySettingsGo = Instantiate(qualitySettingsPrefab);
-                
-                bl_EventHandler.onLocalPlayerDeath += OnLocalPlayerDeath;
-
             }
         }
         private void OnLocalPlayerDeath()

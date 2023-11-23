@@ -419,6 +419,7 @@ MonoBehaviour:
   magazineArray:
   - {fileID: 6959441203472173576}
   isFPWeapon: 1
+  photonView: {fileID: 0}
   weaponCustomizerID: 0
 --- !u!114 &524015489424269637
 MonoBehaviour:
@@ -1224,8 +1225,18 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 4373566201424978108, guid: c472be678311843468e98214f36dec77,
         type: 3}
+      propertyPath: swayMultiplier
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373566201424978108, guid: c472be678311843468e98214f36dec77,
+        type: 3}
       propertyPath: aimingLocation.z
       value: -0.022
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373566201424978108, guid: c472be678311843468e98214f36dec77,
+        type: 3}
+      propertyPath: offsetAimingLocation.x
+      value: -0.0035
       objectReference: {fileID: 0}
     - target: {fileID: 4373566201424978108, guid: c472be678311843468e98214f36dec77,
         type: 3}
@@ -1270,7 +1281,7 @@ PrefabInstance:
     - target: {fileID: 5551271041699666340, guid: c472be678311843468e98214f36dec77,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5551271041699666340, guid: c472be678311843468e98214f36dec77,
         type: 3}
@@ -1322,7 +1333,7 @@ PrefabInstance:
     - target: {fileID: 7832258482302331418, guid: c472be678311843468e98214f36dec77,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7882240947646819881, guid: c472be678311843468e98214f36dec77,
         type: 3}
@@ -1586,10 +1597,10 @@ MonoBehaviour:
   multiplierSpread: 0.1
   sprite: {fileID: 21300000, guid: bbbb29d2cf3c91741bc1a1b953ca5776, type: 3}
   swayMultiplier: 1
-  offsetAimingLocation: {x: 0, y: 0, z: 0.0015}
-  offsetAimingRotation: {x: 0, y: 0, z: 0}
+  offsetAimingLocation: {x: -0.005, y: 0, z: 0}
+  offsetAimingRotation: {x: -1.6, y: 1.5, z: -0.2}
   fieldOfViewMultiplierAim: 0.9
-  fieldOfViewMultiplierAimWeapon: 1
+  fieldOfViewMultiplierAimWeapon: 0.8
   materialIndex: 3
   materialHidden: {fileID: 0}
 --- !u!1001 &8258763990700286936

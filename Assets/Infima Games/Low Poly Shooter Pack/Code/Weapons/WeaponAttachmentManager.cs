@@ -196,6 +196,11 @@ namespace InfimaGames.LowPolyShooterPack
         
         public override void SetupAttachments(string json = "0,0,0,0,0,0")
         {
+            if (bl_GameManager.Instance == null)
+            {
+                ApplyAttachments();
+                return;
+            }
             if (isFPWeapon && !isSync)
             {
                 Gun = GetComponent<bl_Gun>();

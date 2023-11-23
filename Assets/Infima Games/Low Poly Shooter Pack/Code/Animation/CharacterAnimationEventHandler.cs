@@ -23,7 +23,14 @@ namespace InfimaGames.LowPolyShooterPack
 		private void Start()
 		{
 			//Grab a reference to the character component.
-			playerCharacter =bl_GameManager.Instance.LocalPlayerReferences.playerCharacter;
+			if (bl_GameManager.Instance != null)
+			{
+				playerCharacter =bl_GameManager.Instance.LocalPlayerReferences.playerCharacter;
+			}
+			else
+			{
+				playerCharacter = GetComponentInParent<CharacterBehaviour>();
+			}
 		}
 
 		#endregion

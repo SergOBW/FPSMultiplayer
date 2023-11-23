@@ -15,9 +15,9 @@ MonoBehaviour:
   standing:
     offset: {fileID: 11400000, guid: 6280125bcddccbd408d36c7d9327f7a6, type: 2}
     swayData: {fileID: 11400000, guid: f3be44964d61b2e4f9aa8a677ec28aef, type: 2}
-    jumpingCurves: {fileID: 11400000, guid: daaeb5f7390e1a6418558cec5294ebba, type: 2}
-    fallingCurves: {fileID: 11400000, guid: bb5d52e74bd80bf419ecc5c00e330d6a, type: 2}
-    landingCurves: {fileID: 11400000, guid: 41af819d5f38dbf44ab611512d5ae2ce, type: 2}
+    jumpingCurves: {fileID: 11400000, guid: 9d7536014393d4e4a8749e1f74f78f14, type: 2}
+    fallingCurves: {fileID: 11400000, guid: bfeb8563d7a2df34b8e90218c17db186, type: 2}
+    landingCurves: {fileID: 11400000, guid: 34d52c98e5431a24480a5e569a346b63, type: 2}
   crouching:
     offset: {fileID: 11400000, guid: c5545909cb8a08644ac5c97400c2efa5, type: 2}
     swayData: {fileID: 11400000, guid: f3be44964d61b2e4f9aa8a677ec28aef, type: 2}
@@ -27,9 +27,9 @@ MonoBehaviour:
   aiming:
     offset: {fileID: 11400000, guid: f3b5faeed3d186445b0933d4248e9e74, type: 2}
     swayData: {fileID: 11400000, guid: 904076570c59f964caa496918a9d3365, type: 2}
-    jumpingCurves: {fileID: 11400000, guid: daaeb5f7390e1a6418558cec5294ebba, type: 2}
-    fallingCurves: {fileID: 11400000, guid: bb5d52e74bd80bf419ecc5c00e330d6a, type: 2}
-    landingCurves: {fileID: 11400000, guid: 41af819d5f38dbf44ab611512d5ae2ce, type: 2}
+    jumpingCurves: {fileID: 11400000, guid: 9d7536014393d4e4a8749e1f74f78f14, type: 2}
+    fallingCurves: {fileID: 11400000, guid: bfeb8563d7a2df34b8e90218c17db186, type: 2}
+    landingCurves: {fileID: 11400000, guid: 34d52c98e5431a24480a5e569a346b63, type: 2}
   running:
     offset: {fileID: 11400000, guid: 886d2a7c9f6473149bc19747ca7ecafe, type: 2}
     swayData: {fileID: 11400000, guid: f3be44964d61b2e4f9aa8a677ec28aef, type: 2}

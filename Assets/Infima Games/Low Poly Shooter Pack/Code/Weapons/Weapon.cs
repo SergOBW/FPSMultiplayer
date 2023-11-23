@@ -214,8 +214,16 @@ namespace InfimaGames.LowPolyShooterPack
             attachmentManager = GetComponent<WeaponAttachmentManagerBehaviour>();
             
             attachmentManager.SetupAttachments();
+
+            if (bl_GameManager.Instance != null)
+            {
+                characterBehaviour = bl_GameManager.Instance.LocalPlayerReferences.playerCharacter;
+            }
+            else
+            {
+                characterBehaviour = FindObjectOfType<CharacterBehaviour>();
+            }
             
-            characterBehaviour = bl_GameManager.Instance.LocalPlayerReferences.playerCharacter;
             //Cache the world camera. We use this in line traces.
             playerCamera = characterBehaviour.GetCameraWorld().transform;
 
@@ -234,9 +242,12 @@ namespace InfimaGames.LowPolyShooterPack
 
             //Max Out Ammo.
             ammunitionCurrent = magazineBehaviour.GetAmmunitionTotal();
-            
-            PlayerNetwork = bl_PlayerReferences.LocalPlayer.playerNetwork;
-            PlayerCamera = bl_PlayerReferences.LocalPlayer.playerCamera;
+
+            if (bl_GameManager.Instance != null)
+            {
+                PlayerNetwork = bl_PlayerReferences.LocalPlayer.playerNetwork;
+                PlayerCamera = bl_PlayerReferences.LocalPlayer.playerCamera;
+            }
         }
         #endregion
         
@@ -460,10 +471,14 @@ namespace InfimaGames.LowPolyShooterPack
                 //Spawn projectile from the projectile spawn point.
                 GameObject projectile = Instantiate(prefabProjectile, playerCamera.position, Quaternion.Euler(playerCamera.eulerAngles + spreadValue));
                 //Add velocity to the projectile.
-                BuildBulletData();
-                projectile.GetComponent<Projectile>().SetupProjectile(BulletSettings);
-                var instanceData = GetBulletPosition();
-                PlayerNetwork.ReplicateFire(GunType.Machinegun, instanceData.ProjectedHitPoint, BulletSettings.Inaccuracity);
+                if (bl_GameManager.Instance != null)
+                {
+                    BuildBulletData();
+                    projectile.GetComponent<Projectile>().SetupProjectile(BulletSettings);
+                    var instanceData = GetBulletPosition();
+                    PlayerNetwork.ReplicateFire(GunType.Machinegun, instanceData.ProjectedHitPoint, BulletSettings.Inaccuracity);
+                }
+                
                 projectile.GetComponent<Rigidbody>().velocity = projectile.transform.forward * projectileImpulse;
             }
         }
