@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23769931143168288}
   - component: {fileID: 64005688667603504}
   - component: {fileID: 6101972200350252721}
+  - component: {fileID: 3163243732917806627}
   m_Layer: 0
   m_Name: SM_Bld_Village_House_07
   m_TagString: Untagged
@@ -126,3 +127,26 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!205 &3163243732917806627
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363074540339926}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.11539054, y: 1.6970229, z: -1.169614}
+  m_Size: 5.0000877
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23769931143168288}
+  - screenRelativeHeight: 0.089980915
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 23769931143168288}
+  m_Enabled: 1
