@@ -21,6 +21,7 @@ TagManager:
   - GasTank
   - Target
   - ExplosiveBarrel
+  - WeaponCam
   layers:
   - Default
   - TransparentFX
