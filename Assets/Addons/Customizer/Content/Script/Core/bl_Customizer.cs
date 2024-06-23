@@ -68,7 +68,7 @@ namespace MFPS.Addon.Customizer
                     Console.WriteLine(e);
                     throw;
                 }
-                CamoRender.ApplyCamo(WeaponName, AttachmentsIDs[5]);
+                CamoRender.ApplyCamo(WeaponID, AttachmentsIDs[5]);
                 firstApply = true;
             }
             if (WeaponInfo != null)
@@ -549,7 +549,7 @@ namespace MFPS.Addon.Customizer
             }
         }
 
-        public bl_GunInfo GetWeaponInfo() { return bl_GameData.Instance.GetWeapon(bl_CustomizerData.Instance.GetWeapon(WeaponName).GunID); }
+        public bl_GunInfo GetWeaponInfo() { return bl_GameData.Instance.GetWeapon(WeaponID); }
         public int GunID() { return bl_CustomizerData.Instance.GetWeapon(WeaponName).GunID; }
 
 #if UNITY_EDITOR

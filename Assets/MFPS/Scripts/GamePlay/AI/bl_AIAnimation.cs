@@ -164,6 +164,7 @@ public class bl_AIAnimation : bl_AIAnimationBase
         {
             if (mRigidBody[i] == null) continue;
 
+            mRigidBody[i].gameObject.layer = LayerMask.NameToLayer("DeadBody");
             mRigidBody[i].isKinematic = false;
             mRigidBody[i].detectCollisions = true;
             Vector3 rhs = transform.position - from;

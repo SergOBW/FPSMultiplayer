@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections.Generic;
 using Photon.Pun;
 using Photon.Realtime;
-using UnityEngine.Serialization;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 using System.Linq;
 using InfimaGames.LowPolyShooterPack;
@@ -208,7 +207,6 @@ public class bl_PlayerNetwork : bl_MonoBehaviour, IPunObservable
         PlayerReferences.playerAnimations.IsGrounded = fpControler.IsGrounded();
         PlayerReferences.playerAnimations.Velocity = fpControler.GetVelocity();
         PlayerReferences.playerAnimations.FPState = FPState;
-        
     }
 
     /// <summary>

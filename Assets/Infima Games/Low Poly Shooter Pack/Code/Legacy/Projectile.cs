@@ -107,9 +107,10 @@ namespace InfimaGames.LowPolyShooterPack.Legacy
 					damageable.ReceiveDamage(damageData);
 				}
 				
-				Instantiate(bloodImpactPrefabs[Random.Range
+				Transform impact =  Instantiate(bloodImpactPrefabs[Random.Range
 						(0, bloodImpactPrefabs.Length)], transform.position,
 					Quaternion.LookRotation(collision.contacts[0].normal));
+				impact.SetParent(collision.transform);
 				//Destroy bullet object
 				Destroy(gameObject);
 			}

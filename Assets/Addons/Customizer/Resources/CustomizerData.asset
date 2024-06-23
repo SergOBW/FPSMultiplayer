@@ -13,38 +13,14 @@ MonoBehaviour:
   m_Name: CustomizerData
   m_EditorClassIdentifier: 
   Weapons:
-  - WeaponName: AR_01
+  - WeaponName: Kalashnikov
     GunID: 8
     Camos:
     - Name: Default
       GlobalID: 0
       ID: 0
-      Camo: {fileID: 2100000, guid: cd63763af54801c4a953fe47b452497e, type: 2}
-      OverridePreview: {fileID: 0}
-      ofWeaponID: 0
-    - Name: Urban
-      GlobalID: 1
-      ID: 1
-      Camo: {fileID: 2100000, guid: d02bc8852dca1f04cb4bc15ff06b9418, type: 2}
-      OverridePreview: {fileID: 0}
-      ofWeaponID: 0
-    - Name: Artic
-      GlobalID: 2
-      ID: 2
-      Camo: {fileID: 2100000, guid: b91b2397a27f13044a5634a548fce076, type: 2}
-      OverridePreview: {fileID: 0}
-      ofWeaponID: 0
-    - Name: Toxi
-      GlobalID: 3
-      ID: 3
-      Camo: {fileID: 2100000, guid: 39fd7e908f4cca3418157b39161347fb, type: 2}
-      OverridePreview: {fileID: 0}
-      ofWeaponID: 0
-    - Name: Patriot
-      GlobalID: 4
-      ID: 4
-      Camo: {fileID: 2100000, guid: 50246aca79a845b40a8622da984ad45a, type: 2}
-      OverridePreview: {fileID: 0}
+      Camo: {fileID: 2100000, guid: f163886c552e95540a538a1986131edf, type: 2}
+      OverridePreview: {fileID: 2800000, guid: 09bb8ebf41c953146987f66f3bbf9280, type: 3}
       ofWeaponID: 0
     Attachments:
       Suppressers:
@@ -115,7 +91,7 @@ MonoBehaviour:
       - Name: Flash
         ID: 2
         Description: 
-  - WeaponName: AR_02
+  - WeaponName: Colt
     GunID: 9
     Camos:
     - Name: Default
@@ -217,7 +193,7 @@ MonoBehaviour:
       - Name: Flash
         ID: 2
         Description: 
-  - WeaponName: AR_03
+  - WeaponName: Galil
     GunID: 10
     Camos:
     - Name: Default
@@ -319,7 +295,7 @@ MonoBehaviour:
       - Name: Flash
         ID: 2
         Description: 
-  - WeaponName: Handgun_01
+  - WeaponName: Glock
     GunID: 12
     Camos:
     - Name: Default

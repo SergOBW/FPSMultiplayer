@@ -55,9 +55,12 @@ public class bl_NetworkGun : MonoBehaviour
         PlayerSync?.SetNetworkWeapon(Info.Type, this);
         LocalGun?.customWeapon?.Initialitate(LocalGun);
         WeaponAttachmentManagerBehaviour weaponAttachment = GetComponent<WeaponAttachmentManagerBehaviour>();
-        if (weaponAttachment.GetEquippedMuzzle().GetAudioClipFire() != null)
+        if (weaponAttachment != null && weaponAttachment.GetEquippedMuzzle() != null)
         {
-            fireClip = weaponAttachment.GetEquippedMuzzle().GetAudioClipFire();
+            if (weaponAttachment.GetEquippedMuzzle().GetAudioClipFire() != null)
+            {
+                fireClip = weaponAttachment.GetEquippedMuzzle().GetAudioClipFire();
+            }
         }
     }
 

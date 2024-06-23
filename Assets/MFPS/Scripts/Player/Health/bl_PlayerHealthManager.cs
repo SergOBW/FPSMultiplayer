@@ -160,13 +160,13 @@ public class bl_PlayerHealthManager : bl_PlayerHealthManagerBase
     /// <summary>
     /// Call this to make a new damage to the player
     /// </summary>
-    public void GetDamage(DamageData e)
+    public void GetDamage(DamageData damageData)
     {
         bool canDamage = true;
         if (!DamageEnabled)
         {
             //Fix: bots can't damage Master Client teammates.
-            if (e.MFPSActor != null && (e.MFPSActor.Team != thisPlayerTeam || bl_RoomSettings.Instance.CurrentRoomInfo.friendlyFire)) { canDamage = true; }
+            if (damageData.MFPSActor != null && (damageData.MFPSActor.Team != thisPlayerTeam || bl_RoomSettings.Instance.CurrentRoomInfo.friendlyFire)) { canDamage = true; }
             else canDamage = false;
         }
 
@@ -179,7 +179,7 @@ public class bl_PlayerHealthManager : bl_PlayerHealthManagerBase
             return;
         }
 
-        photonView.RPC(nameof(SyncDamage), RpcTarget.AllBuffered, e.Damage, e.From, e.Cause, e.Direction, e.isHeadShot, e.GunID, bl_PhotonNetwork.LocalPlayer);
+        photonView.RPC(nameof(SyncDamage), RpcTarget.AllBuffered, damageData.Damage, damageData.From, damageData.Cause, damageData.Direction, damageData.isHeadShot, damageData.GunID, bl_PhotonNetwork.LocalPlayer);
     }
 
     /// <summary>

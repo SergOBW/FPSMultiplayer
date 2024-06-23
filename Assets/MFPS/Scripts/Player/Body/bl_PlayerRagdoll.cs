@@ -122,16 +122,18 @@ public class bl_PlayerRagdoll : bl_PlayerRagdollBase
     /// </summary>
     public override void SetActiveRagdollPhysics(bool active)
     {
+        
         for (int i = 0; i < playerColliders.Length; i++)
         {
             if (playerColliders[i] == null) continue;
 
+            
             playerColliders[i].enabled = active;
         }
         foreach (var item in rigidBodys)
         {
             if (item == null) continue;
-
+            
             item.isKinematic = !active;
         }
     }

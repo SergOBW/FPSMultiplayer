@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 114294506745604188}
   - component: {fileID: 114273931758585124}
   - component: {fileID: 4608676778391247438}
-  m_Layer: 15
+  m_Layer: 17
   m_Name: World Space Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,6 +30,7 @@ RectTransform:
   m_LocalRotation: {x: 0.70710665, y: -0, z: -0, w: 0.70710695}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 224318283968238498}
   - {fileID: 224149451075644274}
@@ -58,7 +59,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -125,7 +128,7 @@ GameObject:
   - component: {fileID: 224318283968238498}
   - component: {fileID: 222388682455228260}
   - component: {fileID: 114854480301580436}
-  m_Layer: 15
+  m_Layer: 17
   m_Name: Grenade Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,6 +145,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 224947267627026032}
   m_RootOrder: 0
@@ -204,7 +208,7 @@ GameObject:
   - component: {fileID: 224149451075644274}
   - component: {fileID: 222840734312160516}
   - component: {fileID: 114033154810101670}
-  m_Layer: 15
+  m_Layer: 17
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,6 +225,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 224947267627026032}
   m_RootOrder: 1
@@ -283,7 +288,7 @@ GameObject:
   - component: {fileID: 65949159058896134}
   - component: {fileID: 82305533685823640}
   - component: {fileID: 114853094415237424}
-  m_Layer: 15
+  m_Layer: 17
   m_Name: P_LPSP_PROJ_Grenade_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -300,6 +305,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 224947267627026032}
   m_Father: {fileID: 0}
@@ -324,6 +330,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -361,10 +368,21 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948591290861370}
-  serializedVersion: 2
+  serializedVersion: 4
   m_Mass: 10
   m_Drag: 0.01
   m_AngularDrag: 0.01
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
@@ -378,9 +396,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948591290861370}
   m_Material: {fileID: 13400000, guid: 98422cde6324dcf4c8ad2c756e0516c0, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 0.056280985, y: 0.07851053, z: 0.059915576}
   m_Center: {x: 0.000093940645, y: 0.012544222, z: 0.0019112248}
 --- !u!82 &82305533685823640

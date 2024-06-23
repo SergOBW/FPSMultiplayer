@@ -2897,7 +2897,7 @@ Transform:
   - {fileID: 1684312357971916674}
   - {fileID: 5161494184722728712}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &296714299724786653
 AudioSource:
@@ -4665,6 +4665,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8747414128452121418, guid: 472df6f8da21c7845bf1bafde3566634,
+        type: 3}
+      propertyPath: damage
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8747414128452121418, guid: 472df6f8da21c7845bf1bafde3566634,
         type: 3}
@@ -7355,6 +7360,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8747414128452121418, guid: aaae9b0e0cb7c174a8b680c0ed75745f,
+        type: 3}
+      propertyPath: damage
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8747414128452121418, guid: aaae9b0e0cb7c174a8b680c0ed75745f,
         type: 3}
@@ -12955,6 +12965,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137163820050006698, guid: 9a467c4de3e36284f8665dfdc825b7fa,
+        type: 3}
+      propertyPath: damage
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8137163820050006698, guid: 9a467c4de3e36284f8665dfdc825b7fa,
         type: 3}

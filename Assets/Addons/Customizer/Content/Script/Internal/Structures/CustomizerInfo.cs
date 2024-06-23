@@ -77,6 +77,29 @@ namespace MFPS.Addon.Customizer
             Render.materials = mats;
             return m;
         }
+        public Material ApplyCamo(int weaponID, int camoID)
+        {
+            if (Render == null) return null;
+
+            var weaponData = bl_CustomizerData.Instance.GetWeapon(weaponID);
+            if(weaponData == null)
+            {
+                Debug.LogWarning($"Weapon '{weaponID}' is not setup in the Customizer data.");
+                return null;
+            }
+            var camoData = weaponData.Camos.Find(x => x.ID == camoID);
+            if (camoData == null)
+            {
+                Debug.LogWarning($"Camo {camoID} for Weapon '{weaponID}' is not setup in the Customizer data.");
+                return null;
+            }
+
+            Material m = camoData.Camo;
+            Material[] mats = Render.materials;
+            mats[MaterialID] = m;
+            Render.materials = mats;
+            return m;
+        }
     }
 
     [System.Serializable]

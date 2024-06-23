@@ -24,6 +24,18 @@ public class bl_CustomizerData : ScriptableObject
         }
         return null;
     }
+    
+    public CustomizerInfo GetWeapon(int weaponId)
+    {
+        for (int i = 0; i < Weapons.Count; i++)
+        {
+            if (Weapons[i].GunID == weaponId)
+            {
+                return Weapons[i];
+            }
+        }
+        return null;
+    }
 
     public int GetCustomizerID(int GunID)
     {
